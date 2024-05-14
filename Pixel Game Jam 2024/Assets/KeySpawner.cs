@@ -5,18 +5,24 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
 
+    public KeyHolder isKey; // Reference isKey bool from KeyHolder script
+
     [SerializeField] GameObject[] keyPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnKey();
+        spawnKey(); // Call spawnKey to spawn random key on start
     }
 
     // Update is called once per frame
     void Update()
     {
-         
+        // If no key object is within collision area, spawn new object
+        /*if(isKey == false)
+        {
+            spawnKey();
+        }*/
     }
 
     // spawnKey randomly creates key object

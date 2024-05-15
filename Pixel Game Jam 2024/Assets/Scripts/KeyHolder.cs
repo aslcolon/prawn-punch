@@ -5,7 +5,10 @@ using UnityEngine;
 public class KeyHolder : MonoBehaviour
 {
 
-    public bool isUp; // Declare bool for key object within collision area
+    // Declare bool for key objects within collision area
+    public int keyDir;
+    public int holdNum;
+    private string[] holdName = { "Key1", "Key2", "Key3", "Key4", "Key5", "Key6", "Key7", "Key8"};
 
     // Start is called before the first frame update
     void Start()
@@ -16,24 +19,47 @@ public class KeyHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i <= 7; i++)
+        {
+            for (int j = 1; j <= 8; j++)
+            {
+                if(gameObject.name == holdName[i])
+                {
+                    holdNum = j;
+                }
+            }
+        }
     }
 
+    // Check which key is displayed when object enters collision area
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("Collision");
+        // For each tag checked, bool is true for the corresponding key
+        // 1-Up, 2-Left, 3-Down, 4-Right
         if (other.gameObject.tag == "Up Key")
         {
-            print("Up Key");
-            isUp = true;
+            keyDir = 1;
         }
-     
+        else if (other.gameObject.tag == "Left Key")
+        {
+            keyDir = 2;
+        }
+        else if (other.gameObject.tag == "Down Key")
+        {
+            keyDir = 3;
+        }
+        else if (other.gameObject.tag == "Right Key")
+        {
+            keyDir = 4;
+        }
+
     }
 
     /*private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Up Key")
         {
+            print("No up key");
             isUp = false;
         }
     }*/

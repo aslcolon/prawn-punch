@@ -24,17 +24,19 @@ public class KeyHolder : MonoBehaviour
         print("Collision");
         if (other.gameObject.tag == "Up Key")
         {
-            print("Up Key");
+            print("Up key");
             isUp = true;
         }
      
     }
 
-    /*private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
+        print("No collision");
         if (other.gameObject.tag == "Up Key")
         {
+            print("No up key");
             isUp = false;
         }
-    }*/
+    }
 }

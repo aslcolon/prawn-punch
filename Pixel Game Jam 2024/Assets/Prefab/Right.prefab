@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2144706919704326407}
   - component: {fileID: -4019031684901683832}
   - component: {fileID: -6064815305297290740}
+  - component: {fileID: 5869471783511627090}
   m_Layer: 5
   m_Name: Right
   m_TagString: Right Key
@@ -129,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!50 &-6064815305297290740
 Rigidbody2D:
@@ -158,3 +159,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5869471783511627090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327242008488843228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a9c42baaee61c47a9690e89f8b1ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

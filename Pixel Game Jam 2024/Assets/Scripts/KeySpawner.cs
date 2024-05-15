@@ -28,7 +28,9 @@ public class Key : MonoBehaviour
     // spawnKey randomly creates key object
     void spawnKey()
     {
+        float spawnY = transform.position.y - 1;
+
         // Copy key prefab objects from given range of keys
-        Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
+        Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], new Vector3(transform.position.x, spawnY), transform.rotation);
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Left Key
   - Down Key
   - Right Key
+  - Key Holder
   layers:
   - Default
   - TransparentFX

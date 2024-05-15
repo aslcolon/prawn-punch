@@ -5,7 +5,8 @@ using UnityEngine;
 public class KeyHolder : MonoBehaviour
 {
 
-    public bool isUp; // Declare bool for key object within collision area
+    // Declare bool for key objects within collision area
+    public bool isUp, isLeft, isDown, isRight;
 
     // Start is called before the first frame update
     void Start()
@@ -19,24 +20,35 @@ public class KeyHolder : MonoBehaviour
         
     }
 
+    // Check which key is displayed when object enters collision area
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("Collision");
+        // If tag is "Up Key", isUp is true
         if (other.gameObject.tag == "Up Key")
         {
-            print("Up key");
             isUp = true;
         }
-     
+        else if (other.gameObject.tag == "Left Key")
+        {
+            isLeft = true;
+        }
+        else if (other.gameObject.tag == "Down Key")
+        {
+            isDown = true;
+        }
+        else if (other.gameObject.tag == "Right Key")
+        {
+            isRight = true;
+        }
+
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    /*private void OnTriggerExit2D(Collider2D other)
     {
-        print("No collision");
         if (other.gameObject.tag == "Up Key")
         {
             print("No up key");
             isUp = false;
         }
-    }
+    }*/
 }

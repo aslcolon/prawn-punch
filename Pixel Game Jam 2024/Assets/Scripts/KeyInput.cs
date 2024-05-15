@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KeyInput : MonoBehaviour
@@ -8,7 +9,7 @@ public class KeyInput : MonoBehaviour
 
 
     public KeyHolder refScript1, refScript2, refScript3, refScript4, refScript5, refScript6, refScript7, refScript8;
-    private bool isHit = false;
+    private int isHit = 0;
 
    // private SpriteRenderer spriteRen;
    // public Sprite defSprite;
@@ -32,28 +33,34 @@ public class KeyInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkWASD(refScript1);
+        if(isHit == 0)
+        {
+            checkWASD(refScript1);
+        }
+        //checkWASD(refScript2);
 
-        if (isHit == true)
-        {   
+        if (isHit == 1)
+        {
             //print("Key1 hit");
-            isHit = false;
+            //isHit = false;
             checkWASD(refScript2);
-            
+        }
 
-            if (isHit == true)
-            {
+
+        if (isHit == 2)
+        {
                 //print("Key2 hit");
-                isHit = false;
-                checkWASD(refScript3);
-
-                if (isHit == true)
-                {
+                //isHit = false;
+            checkWASD(refScript3);
+        }
+    
+        if (isHit == 3)
+        {
                     //print("Key3 hit");
-                    isHit = false;
-                    checkWASD(refScript4);
-                }
-            }
+                    //isHit = false;
+          checkWASD(refScript4);
+                
+            
         }
         
         //checkKeys(refScript5);
@@ -68,8 +75,9 @@ public class KeyInput : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                print("W Pressed");
-                isHit = true;
+                print("W Pressed");           
+                isHit++;
+                print(isHit);
             }
         }
         else if (refScriptNum.keyDir == 2)
@@ -77,7 +85,8 @@ public class KeyInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A))
             {
                 print("A Pressed");
-                isHit = true;
+                isHit++;
+                print(isHit);
             }
         }
         else if (refScriptNum.keyDir == 3)
@@ -85,7 +94,8 @@ public class KeyInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.S))
             {
                 print("S Pressed");
-                isHit = true;
+                isHit++;
+                print(isHit);
             }
         }
         else if (refScriptNum.keyDir == 4)
@@ -93,8 +103,13 @@ public class KeyInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.D))
             {
                 print("D Pressed");
-                isHit = true;
+                isHit++;
+                print(isHit);
             }
+        }
+        else
+        {
+            //isHit--;
         }
     }
 }

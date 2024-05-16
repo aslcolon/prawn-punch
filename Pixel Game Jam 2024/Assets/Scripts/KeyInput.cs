@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class KeyInput : MonoBehaviour
 {
-
-
     public KeyHolder refScript1, refScript2, refScript3, refScript4, refScript5, refScript6, refScript7, refScript8;
     private int isHitP1 = 0, isHitP2 = 0;
 
@@ -72,11 +70,16 @@ public class KeyInput : MonoBehaviour
 
     void checkInputP1(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
-        if (refScriptNum.keyDir == 1)
+        if(refScriptNum.keyDir == 1)
         {
-            if (Input.GetKeyDown(key1))
+            if(Input.GetKeyDown(key1))
             {
                 isHitP1++;
+                print(isHitP1);
+            }
+            else if(Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4)) 
+            {
+                isHitP1 = 0;
                 print(isHitP1);
             }
         }
@@ -87,6 +90,11 @@ public class KeyInput : MonoBehaviour
                 isHitP1++;
                 print(isHitP1);
             }
+            else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
+            {
+                isHitP1 = 0;
+                print(isHitP1);
+            }
         }
         else if (refScriptNum.keyDir == 3)
         {
@@ -95,12 +103,22 @@ public class KeyInput : MonoBehaviour
                 isHitP1++;
                 print(isHitP1);
             }
+            else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
+            {
+                isHitP1 = 0;
+                print(isHitP1);
+            }
         }
         else if (refScriptNum.keyDir == 4)
         {
             if (Input.GetKeyDown(key4))
             {
                 isHitP1++;
+                print(isHitP1);
+            }
+            else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
+            {
+                isHitP1 = 0;
                 print(isHitP1);
             }
         }
@@ -119,12 +137,22 @@ public class KeyInput : MonoBehaviour
                 isHitP2++;
                 print(isHitP2);
             }
+            else if (Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
+            {
+                isHitP2 = 0;
+                print(isHitP2);
+            }
         }
         else if (refScriptNum.keyDir == 2)
         {
             if (Input.GetKeyDown(key2))
             {
                 isHitP2++;
+                print(isHitP2);
+            }
+            else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
+            {
+                isHitP2 = 0;
                 print(isHitP2);
             }
         }
@@ -135,12 +163,22 @@ public class KeyInput : MonoBehaviour
                 isHitP2++;
                 print(isHitP2);
             }
+            else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
+            {
+                isHitP2 = 0;
+                print(isHitP2);
+            }
         }
         else if (refScriptNum.keyDir == 4)
         {
             if (Input.GetKeyDown(key4))
             {
                 isHitP2++;
+                print(isHitP2);
+            }
+            else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
+            {
+                isHitP2 = 0;
                 print(isHitP2);
             }
         }

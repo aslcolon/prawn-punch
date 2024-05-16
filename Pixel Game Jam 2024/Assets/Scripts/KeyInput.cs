@@ -10,6 +10,7 @@ public class KeyInput : MonoBehaviour
 
     public KeyHolder refScript1, refScript2, refScript3, refScript4, refScript5, refScript6, refScript7, refScript8;
     private int isHit = 0;
+    private bool hitOnce = false;
 
    // private SpriteRenderer spriteRen;
    // public Sprite defSprite;
@@ -33,33 +34,45 @@ public class KeyInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isHit == 0)
+        if(hitOnce == false && isHit == 0)
         {
             checkWASD(refScript1);
+            //hit1 = true;
+            /*if (Input.GetKeyUp(KeyCode.W))
+            {
+                hitOnce = false;
+                //print(hitOnce);
+            }*/
+            hitOnce = false;
         }
         //checkWASD(refScript2);
 
-        if (isHit == 1)
+        else if (hitOnce == false && isHit == 1)
         {
             //print("Key1 hit");
             //isHit = false;
             checkWASD(refScript2);
+            //hit2 = true;
+            hitOnce = false;
         }
 
 
-        if (isHit == 2)
+        else if (hitOnce == false && isHit == 2)
         {
                 //print("Key2 hit");
                 //isHit = false;
             checkWASD(refScript3);
+            //hit3 = true;
+            hitOnce = false;
         }
-    
-        if (isHit == 3)
+
+        else if (hitOnce == false && isHit == 3)
         {
                     //print("Key3 hit");
                     //isHit = false;
           checkWASD(refScript4);
-                
+            //it4 = true;
+          hitOnce = false;      
             
         }
         
@@ -78,7 +91,15 @@ public class KeyInput : MonoBehaviour
                 print("W Pressed");           
                 isHit++;
                 print(isHit);
+                hitOnce = true;
+                print(hitOnce);
             }
+            /*if(Input.GetKeyUp(KeyCode.W))
+            {
+                hitOnce = false;
+                print(hitOnce);
+            }*/
+            //hitOnce = false;
         }
         else if (refScriptNum.keyDir == 2)
         {
@@ -87,7 +108,14 @@ public class KeyInput : MonoBehaviour
                 print("A Pressed");
                 isHit++;
                 print(isHit);
+                hitOnce = true;
+                print(hitOnce);
             }
+            /*if (Input.GetKeyUp(KeyCode.A))
+            {
+                hitOnce = false;
+                print(hitOnce);
+            }*/
         }
         else if (refScriptNum.keyDir == 3)
         {
@@ -96,6 +124,13 @@ public class KeyInput : MonoBehaviour
                 print("S Pressed");
                 isHit++;
                 print(isHit);
+                hitOnce = true;
+                print(hitOnce);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                hitOnce = false;
+                print(hitOnce);
             }
         }
         else if (refScriptNum.keyDir == 4)
@@ -105,6 +140,13 @@ public class KeyInput : MonoBehaviour
                 print("D Pressed");
                 isHit++;
                 print(isHit);
+                hitOnce = true;
+                print(hitOnce);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                hitOnce = false;
+                print(hitOnce);
             }
         }
         else

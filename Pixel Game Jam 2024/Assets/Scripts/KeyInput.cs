@@ -9,8 +9,7 @@ public class KeyInput : MonoBehaviour
 
 
     public KeyHolder refScript1, refScript2, refScript3, refScript4, refScript5, refScript6, refScript7, refScript8;
-    private int isHit = 0;
-    private bool hitOnce = false;
+    private int isHitP1 = 0, isHitP2 = 0;
 
    // private SpriteRenderer spriteRen;
    // public Sprite defSprite;
@@ -34,119 +33,115 @@ public class KeyInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hitOnce == false && isHit == 0)
+        if(isHitP1 == 0)
         {
-            checkWASD(refScript1);
-            //hit1 = true;
-            /*if (Input.GetKeyUp(KeyCode.W))
-            {
-                hitOnce = false;
-                //print(hitOnce);
-            }*/
-            hitOnce = false;
+            checkInputP1(refScript1, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
         }
-        //checkWASD(refScript2);
-
-        else if (hitOnce == false && isHit == 1)
+        else if (isHitP1 == 1)
         {
-            //print("Key1 hit");
-            //isHit = false;
-            checkWASD(refScript2);
-            //hit2 = true;
-            hitOnce = false;
+            checkInputP1(refScript2, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
+        }
+        else if (isHitP1 == 2)
+        {
+            checkInputP1(refScript3, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
         }
 
-
-        else if (hitOnce == false && isHit == 2)
+        else if (isHitP1 == 3)
         {
-                //print("Key2 hit");
-                //isHit = false;
-            checkWASD(refScript3);
-            //hit3 = true;
-            hitOnce = false;
+            checkInputP1(refScript4, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
         }
 
-        else if (hitOnce == false && isHit == 3)
+        if (isHitP2 == 0)
         {
-                    //print("Key3 hit");
-                    //isHit = false;
-          checkWASD(refScript4);
-            //it4 = true;
-          hitOnce = false;      
-            
+            checkInputP2(refScript5, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
         }
-        
-        //checkKeys(refScript5);
-        //checkKeys(refScript6);
-        //checkKeys(refScript7);
-        //checkKeys(refScript8);
+        else if (isHitP2 == 1)
+        {
+            checkInputP2(refScript6, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
+        }
+        else if (isHitP2 == 2)
+        {
+            checkInputP2(refScript7, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
+        }
+
+        else if (isHitP2 == 3)
+        {
+            checkInputP2(refScript8, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
+        }
     }
 
-    void checkWASD(KeyHolder refScriptNum)
+    void checkInputP1(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
         if (refScriptNum.keyDir == 1)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(key1))
             {
-                print("W Pressed");           
-                isHit++;
-                print(isHit);
-                hitOnce = true;
-                print(hitOnce);
+                isHitP1++;
+                print(isHitP1);
             }
-            /*if(Input.GetKeyUp(KeyCode.W))
-            {
-                hitOnce = false;
-                print(hitOnce);
-            }*/
-            //hitOnce = false;
         }
         else if (refScriptNum.keyDir == 2)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(key2))
             {
-                print("A Pressed");
-                isHit++;
-                print(isHit);
-                hitOnce = true;
-                print(hitOnce);
+                isHitP1++;
+                print(isHitP1);
             }
-            /*if (Input.GetKeyUp(KeyCode.A))
-            {
-                hitOnce = false;
-                print(hitOnce);
-            }*/
         }
         else if (refScriptNum.keyDir == 3)
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(key3))
             {
-                print("S Pressed");
-                isHit++;
-                print(isHit);
-                hitOnce = true;
-                print(hitOnce);
-            }
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                hitOnce = false;
-                print(hitOnce);
+                isHitP1++;
+                print(isHitP1);
             }
         }
         else if (refScriptNum.keyDir == 4)
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(key4))
             {
-                print("D Pressed");
-                isHit++;
-                print(isHit);
-                hitOnce = true;
-                print(hitOnce);
+                isHitP1++;
+                print(isHitP1);
             }
-            if (Input.GetKeyUp(KeyCode.D))
+        }
+        else
+        {
+            //isHit--;
+        }
+    }
+
+    void checkInputP2(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
+    {
+        if (refScriptNum.keyDir == 1)
+        {
+            if (Input.GetKeyDown(key1))
             {
-                hitOnce = false;
-                print(hitOnce);
+                isHitP2++;
+                print(isHitP2);
+            }
+        }
+        else if (refScriptNum.keyDir == 2)
+        {
+            if (Input.GetKeyDown(key2))
+            {
+                isHitP2++;
+                print(isHitP2);
+            }
+        }
+        else if (refScriptNum.keyDir == 3)
+        {
+            if (Input.GetKeyDown(key3))
+            {
+                isHitP2++;
+                print(isHitP2);
+            }
+        }
+        else if (refScriptNum.keyDir == 4)
+        {
+            if (Input.GetKeyDown(key4))
+            {
+                isHitP2++;
+                print(isHitP2);
             }
         }
         else

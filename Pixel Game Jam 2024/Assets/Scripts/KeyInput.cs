@@ -6,8 +6,15 @@ using UnityEngine;
 
 public class KeyInput : MonoBehaviour
 {
-    public KeyHolder refScript1, refScript2, refScript3, refScript4, refScript5, refScript6, refScript7, refScript8;
-    private int isHitP1 = 0, isHitP2 = 0;
+
+    // Declare KeyHolder to reference KeyHolder script integers
+    public KeyHolder[] refScript = new KeyHolder[8];
+
+    // Declare strings of the key holder names
+    private string[] holdName = { "Key1", "Key2", "Key3", "Key4", "Key5", "Key6", "Key7", "Key8" };
+
+    // Declare and initialize holdCount integers that will determine which key holder is active
+    private int holdCountP1 = 0, holdCountP2;
 
    // private SpriteRenderer spriteRen;
    // public Sprite defSprite;
@@ -18,108 +25,96 @@ public class KeyInput : MonoBehaviour
     {
         //spriteRen = GetComponent<SpriteRenderer>();
 
-        refScript1 = GameObject.Find("Key1").GetComponent<KeyHolder>();
-        refScript2 = GameObject.Find("Key2").GetComponent<KeyHolder>();
-        refScript3 = GameObject.Find("Key3").GetComponent<KeyHolder>();
-        refScript4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
-        refScript5 = GameObject.Find("Key5").GetComponent<KeyHolder>();
-        refScript6 = GameObject.Find("Key6").GetComponent<KeyHolder>();
-        refScript7 = GameObject.Find("Key7").GetComponent<KeyHolder>();
-        refScript8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
+        // Initialize holdCount integer for P2
+        holdCountP2 = holdName.Length / 2;
+
+        // Initialize refScript as KeyHolder components attached to each key holder
+        for (int i = 0; i < refScript.Length; i++)
+        {
+            refScript[i] = GameObject.Find(holdName[i]).GetComponent<KeyHolder>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isHitP1 == 0)
+
+        // Check P1 key input for ascending key holder
+        for(int i = 0; i < holdName.Length / 2; i++)
         {
-            checkInputP1(refScript1, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
-        }
-        else if (isHitP1 == 1)
-        {
-            checkInputP1(refScript2, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
-        }
-        else if (isHitP1 == 2)
-        {
-            checkInputP1(refScript3, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
+            if(holdCountP1 == i)
+            {
+                checkInputP1(refScript[i], KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
+                break;
+            }
         }
 
-        else if (isHitP1 == 3)
+        // Check P2 key input for ascending key holder
+        for(int j = holdName.Length / 2; j < holdName.Length; j++)
         {
-            checkInputP1(refScript4, KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
+            if(holdCountP2 == j)
+            {
+                checkInputP2(refScript[j], KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
+                break;
+            }
         }
 
-        if (isHitP2 == 0)
-        {
-            checkInputP2(refScript5, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
-        }
-        else if (isHitP2 == 1)
-        {
-            checkInputP2(refScript6, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
-        }
-        else if (isHitP2 == 2)
-        {
-            checkInputP2(refScript7, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
-        }
-
-        else if (isHitP2 == 3)
-        {
-            checkInputP2(refScript8, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
-        }
     }
 
+    // Check if key input matches key displayed for P1
     void checkInputP1(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
+        // If keyDir integer declared from KeyHolder script 
         if(refScriptNum.keyDir == 1)
         {
             if(Input.GetKeyDown(key1))
             {
-                isHitP1++;
-                print(isHitP1);
+                holdCountP1++;
+                print(holdCountP1);
             }
             else if(Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4)) 
             {
-                isHitP1 = 0;
-                print(isHitP1);
+                holdCountP1 = 0;
+                print(holdCountP1);
             }
         }
         else if (refScriptNum.keyDir == 2)
         {
             if (Input.GetKeyDown(key2))
             {
-                isHitP1++;
-                print(isHitP1);
+                holdCountP1++;
+                print(holdCountP1);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
-                isHitP1 = 0;
-                print(isHitP1);
+                holdCountP1 = 0;
+                print(holdCountP1);
             }
         }
         else if (refScriptNum.keyDir == 3)
         {
             if (Input.GetKeyDown(key3))
             {
-                isHitP1++;
-                print(isHitP1);
+                holdCountP1++;
+                print(holdCountP1);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
-                isHitP1 = 0;
-                print(isHitP1);
+                holdCountP1 = 0;
+                print(holdCountP1);
             }
         }
         else if (refScriptNum.keyDir == 4)
         {
             if (Input.GetKeyDown(key4))
             {
-                isHitP1++;
-                print(isHitP1);
+                holdCountP1++;
+                print(holdCountP1);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {
-                isHitP1 = 0;
-                print(isHitP1);
+                holdCountP1 = 0;
+                print(holdCountP1);
             }
         }
         else
@@ -128,58 +123,59 @@ public class KeyInput : MonoBehaviour
         }
     }
 
+    // Check if key input matches key displayed for P2
     void checkInputP2(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
         if (refScriptNum.keyDir == 1)
         {
             if (Input.GetKeyDown(key1))
             {
-                isHitP2++;
-                print(isHitP2);
+                holdCountP2++;
+                print(holdCountP2);
             }
             else if (Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
-                isHitP2 = 0;
-                print(isHitP2);
+                holdCountP2 = holdName.Length / 2;
+                print(holdCountP2);
             }
         }
         else if (refScriptNum.keyDir == 2)
         {
             if (Input.GetKeyDown(key2))
             {
-                isHitP2++;
-                print(isHitP2);
+                holdCountP2++;
+                print(holdCountP2);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
-                isHitP2 = 0;
-                print(isHitP2);
+                holdCountP2 = holdName.Length / 2;
+                print(holdCountP2);
             }
         }
         else if (refScriptNum.keyDir == 3)
         {
             if (Input.GetKeyDown(key3))
             {
-                isHitP2++;
-                print(isHitP2);
+                holdCountP2++;
+                print(holdCountP2);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
-                isHitP2 = 0;
-                print(isHitP2);
+                holdCountP2 = holdName.Length / 2;
+                print(holdCountP2);
             }
         }
         else if (refScriptNum.keyDir == 4)
         {
             if (Input.GetKeyDown(key4))
             {
-                isHitP2++;
-                print(isHitP2);
+                holdCountP2++;
+                print(holdCountP2);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {
-                isHitP2 = 0;
-                print(isHitP2);
+                holdCountP2 = holdName.Length / 2;
+                print(holdCountP2);
             }
         }
         else

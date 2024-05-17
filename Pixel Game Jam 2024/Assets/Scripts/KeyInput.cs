@@ -71,6 +71,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
+                GameObject.FindGameObjectWithTag("Up Key").GetComponent<SpriteRenderer>().enabled = false;
             }
             else if(Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4)) 
             {
@@ -84,6 +85,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
+                GameObject.FindGameObjectWithTag("Left Key").GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
@@ -97,6 +99,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
+                GameObject.FindGameObjectWithTag("Down Key").GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
@@ -110,6 +113,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
+                GameObject.FindGameObjectWithTag("Right Key").GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {
@@ -132,6 +136,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP2++;
                 print(holdCountP2);
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
@@ -145,6 +150,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP2++;
                 print(holdCountP2);
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
@@ -158,6 +164,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP2++;
                 print(holdCountP2);
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
@@ -171,6 +178,7 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP2++;
                 print(holdCountP2);
+                this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {

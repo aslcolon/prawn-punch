@@ -8,6 +8,7 @@ public class KeyHolder : MonoBehaviour
     // Declare bool for key objects within collision area
     public int keyDir;
     public int holdNum;
+    public bool isSpawn = true;
     private string[] holdName = { "Key1", "Key2", "Key3", "Key4", "Key5", "Key6", "Key7", "Key8"};
 
     // Start is called before the first frame update
@@ -55,12 +56,11 @@ public class KeyHolder : MonoBehaviour
 
     }
 
-    /*private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Up Key")
+        if (other.gameObject.tag != "Up Key" && other.gameObject.tag != "Left Key" && other.gameObject.tag != "Down Key" && other.gameObject.tag != "Right Key")
         {
-            print("No up key");
-            isUp = false;
+            isSpawn = false;
         }
-    }*/
+    }
 }

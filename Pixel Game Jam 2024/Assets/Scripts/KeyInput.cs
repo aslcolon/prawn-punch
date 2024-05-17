@@ -72,6 +72,7 @@ public class KeyInput : MonoBehaviour
 
         if(holdCountP1 == 4)
         {
+            holdCountP1 = 0;
             for(int i = 0; i < holdName.Length / 2; i++)
             {
                 Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
@@ -108,6 +109,7 @@ public class KeyInput : MonoBehaviour
 
         if (holdCountP2 == 8)
         {
+            holdCountP2 = holdName.Length / 2;
             for (int i = holdName.Length / 2; i < refScript.Length; i++)
             {
                 Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));

@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
   - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
   - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
   - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a8623bc8e9c80409756d10d000185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKey: {fileID: 0}
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
   - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}

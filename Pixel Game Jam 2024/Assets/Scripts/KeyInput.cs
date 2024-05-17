@@ -16,7 +16,7 @@ public class KeyInput : MonoBehaviour
     // Declare and initialize holdCount integers that will determine which key holder is active
     private int holdCountP1 = 0, holdCountP2;
 
-    private bool isHit = false;
+    private bool isHitP1 = false, wrongInput = false;
 
    // private SpriteRenderer spriteRen;
    // public Sprite defSprite;
@@ -47,11 +47,25 @@ public class KeyInput : MonoBehaviour
             if(holdCountP1 == i)
             {
                 checkInputP1(refScript[i], KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
-                if(isHit == true)
+
+                if(isHitP1 == true)
                 {
                     GameObject.Find("Prefab Spawn" + (i + 1).ToString()).GetComponent<SpriteRenderer>().enabled = false;
-                    isHit = false;
-                }               
+                    isHitP1 = false;
+                }
+
+                else if(wrongInput == true)
+                {
+                    for(int j = 0; j < refScript.Length; j++)
+                    {
+                        if(GameObject.Find("Prefab Spawn" + (j + 1).ToString()).GetComponent<SpriteRenderer>().enabled == false)
+                        {
+                            GameObject.Find("Prefab Spawn" + (j + 1).ToString()).GetComponent<SpriteRenderer>().enabled = true;
+                        }
+                    }
+                    
+                }
+                
                 break;
             }
         }
@@ -78,17 +92,14 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
-                isHit = true;
-                /*if(GameObject.FindGameObjectWithTag("Up Key").name == "W(Clone)")
-                {
-                    GetComponent<SpriteRenderer>().enabled = false;
-                }*/
-                //GameObject.Find("W(Clone)").GetComponent<SpriteRenderer>().enabled = false;
+                isHitP1 = true;
+                wrongInput = false;
             }
             else if(Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4)) 
             {
                 holdCountP1 = 0;
                 print(holdCountP1);
+                wrongInput = true;
             }
         }
         else if (refScriptNum.keyDir == 2)
@@ -97,13 +108,14 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
-                isHit = true;
-                //GameObject.FindGameObjectWithTag("Left Key").GetComponent<SpriteRenderer>().enabled = false;
+                isHitP1 = true;
+                wrongInput = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
                 holdCountP1 = 0;
                 print(holdCountP1);
+                wrongInput = true;
             }
         }
         else if (refScriptNum.keyDir == 3)
@@ -112,13 +124,14 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
-                isHit = true;
-                //GameObject.FindGameObjectWithTag("Down Key").GetComponent<SpriteRenderer>().enabled = false;
+                isHitP1 = true;
+                wrongInput = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
                 holdCountP1 = 0;
                 print(holdCountP1);
+                wrongInput = true;
             }
         }
         else if (refScriptNum.keyDir == 4)
@@ -127,13 +140,14 @@ public class KeyInput : MonoBehaviour
             {
                 holdCountP1++;
                 print(holdCountP1);
-                isHit = true;
-                //GameObject.FindGameObjectWithTag("Right Key").GetComponent<SpriteRenderer>().enabled = false;
+                isHitP1 = true;
+                wrongInput = false;
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {
                 holdCountP1 = 0;
                 print(holdCountP1);
+                wrongInput = true;
             }
         }
         else

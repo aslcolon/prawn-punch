@@ -18,14 +18,9 @@ public class KeyInput : MonoBehaviour
 
     private bool isHitP1 = false, isHitP2 = false, wrongInputP1 = false, wrongInputP2 = false;
 
-    // private SpriteRenderer spriteRen;
-    // public Sprite defSprite;
-    //public Sprite hitSprite;
-
     // Start is called before the first frame update
     void Start()
     {
-        //spriteRen = GetComponent<SpriteRenderer>();
 
         // Initialize holdCount integer for P2
         holdCountP2 = holdName.Length / 2;
@@ -35,7 +30,6 @@ public class KeyInput : MonoBehaviour
         {
             refScript[i] = GameObject.Find(holdName[i]).GetComponent<KeyHolder>();
         }
-
     }
 
     // Update is called once per frame

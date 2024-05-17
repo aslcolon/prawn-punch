@@ -7,9 +7,7 @@ public class KeyHolder : MonoBehaviour
 
     // Declare bool for key objects within collision area
     public int keyDir;
-    public int holdNum;
     public bool isSpawn = true;
-    private string[] holdName = { "Key1", "Key2", "Key3", "Key4", "Key5", "Key6", "Key7", "Key8"};
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +18,7 @@ public class KeyHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i <= 7; i++)
-        {
-            for (int j = 1; j <= 8; j++)
-            {
-                if(gameObject.name == holdName[i])
-                {
-                    holdNum = j;
-                }
-            }
-        }
+
     }
 
     // Check which key is displayed when object enters collision area

@@ -9,6 +9,7 @@ TagManager:
   - Down Key
   - Right Key
   - Key Holder
+  - Audio
   layers:
   - Default
   - TransparentFX

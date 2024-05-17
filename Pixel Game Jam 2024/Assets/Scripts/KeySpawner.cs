@@ -29,6 +29,7 @@ public class Key : MonoBehaviour
     void spawnKey()
     {
         // Copy key prefab objects from given range of keys
-        Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
+        var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
+        newPrefab.name = "Prefab " + gameObject.name;
     }
 }

@@ -25,7 +25,7 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(refIsSpawn.isSpawn == false)
+        if(refIsSpawn.isSpawnP1 == false)
         {
             spawnKey();
         }

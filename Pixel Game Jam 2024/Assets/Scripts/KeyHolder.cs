@@ -7,7 +7,7 @@ public class KeyHolder : MonoBehaviour
 
     // Declare bool for key objects within collision area
     public int keyDir;
-    public bool isSpawn = true;
+    public bool isSpawnP1 = true, isSpawnP2 = true;
 
     // Start is called before the first frame update
     void Start()
@@ -47,9 +47,19 @@ public class KeyHolder : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Up Key" && other.gameObject.tag != "Left Key" && other.gameObject.tag != "Down Key" && other.gameObject.tag != "Right Key")
+
+        /*for(int i = 0; i < 4; i++)
         {
-            isSpawn = false;
+            if(other.gameObject.name == "Prefab Spawn" + (i + 1).ToString())
+            {
+                isSpawnP1 = false;
+            }
+        }*/
+
+        if (other.gameObject.tag == "Up Key" || other.gameObject.tag == "Left Key" || other.gameObject.tag == "Down Key" || other.gameObject.tag == "Right Key")
+        {
+            isSpawnP1 = false;
         }
+        
     }
 }

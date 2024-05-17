@@ -70,6 +70,14 @@ public class KeyInput : MonoBehaviour
             }
         }
 
+        if(holdCountP1 == 4)
+        {
+            for(int i = 0; i < holdName.Length / 2; i++)
+            {
+                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+            }
+        }
+
         // Check P2 key input for ascending key holder
         for(int j = holdName.Length / 2; j < holdName.Length; j++)
         {
@@ -95,6 +103,14 @@ public class KeyInput : MonoBehaviour
 
                 }
                 break;
+            }
+        }
+
+        if (holdCountP2 == 8)
+        {
+            for (int i = holdName.Length / 2; i < refScript.Length; i++)
+            {
+                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
             }
         }
 

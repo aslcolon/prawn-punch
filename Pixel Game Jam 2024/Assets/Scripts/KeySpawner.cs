@@ -16,12 +16,18 @@ public class KeySpawner : MonoBehaviour
 
     [SerializeField] GameObject[] keyPrefab; // List for implementing keyPrefab
 
+    //private bool round1 = true;
+    public HealthBar refHealthP1, refHealthP2;
+
     // Start is called before the first frame update
     void Start()
     {
         // Initialize refIsSpawn4 as KeyHolder components attached to each key holder
         refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
         refIsSpawn8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
+
+        refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
+        refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
 
         spawnRate = 0.1; // Initialize spawnRate
 
@@ -33,6 +39,7 @@ public class KeySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // If timer is less than spawnRate, increase time
         if (timer < spawnRate)
         {
@@ -49,6 +56,7 @@ public class KeySpawner : MonoBehaviour
             spawnKeyP2();
             timer = 0;
         }
+
     }
 
     // spawnKey randomly creates key object
@@ -59,6 +67,14 @@ public class KeySpawner : MonoBehaviour
             // Copy key prefab objects from given range of keys and rename them
             var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
             newPrefab.name = "Prefab " + gameObject.name;
+
+            if (refHealthP1.slider.value == 0 || refHealthP2.slider.value == 0)
+            {
+                for (int i = 1; i < 9; i++)
+                {
+                    GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
         
             // Count sequence every time new sequence is spawned
             countSeqP1++; 
@@ -74,6 +90,14 @@ public class KeySpawner : MonoBehaviour
             // Copy key prefab objects from given range of keys and rename them
             var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
             newPrefab.name = "Prefab " + gameObject.name;
+
+            if (refHealthP1.slider.value == 0 || refHealthP2.slider.value == 0)
+            {
+                for (int i = 1; i < 9; i++)
+                {
+                    GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
 
             // Count sequence every time new sequence is spawned
             countSeqP2++;

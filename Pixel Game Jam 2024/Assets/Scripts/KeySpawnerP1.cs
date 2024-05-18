@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class KeySpawnerP1 : MonoBehaviour
+public class KeySpawner : MonoBehaviour
 {
 
-    public KeyHolder refIsSpawn4; // Declare KeyHolder to reference KeyHolder script
+    public KeyHolder refIsSpawn4, refIsSpawn8; // Declare KeyHolder to reference KeyHolder script
 
     // Implement spawn timer
     public double spawnRate = 0.1;
     private float timer = 0;
     
-    private int countSeq = 0; // Sequence spawned counter
+    public int countSeq = 0, countSeqP2 = 0; // Sequence spawned counter
+
+    //private bool round1 = true, round2 = true, round3 = true;
 
     [SerializeField] GameObject[] keyPrefab; // List for implementing keyPrefab
 
@@ -21,8 +23,12 @@ public class KeySpawnerP1 : MonoBehaviour
     {
         // Initialize refIsSpawn4 as KeyHolder components attached to each key holder
         refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
+        refIsSpawn8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
 
-        spawnKey(); // Call spawnKey to spawn random key on start
+        spawnRate = 0.1;
+
+        spawnKeyP1(); // Call spawnKey to spawn random key on start
+        spawnKeyP2();
     }
 
     // Update is called once per frame
@@ -37,20 +43,86 @@ public class KeySpawnerP1 : MonoBehaviour
         else if (refIsSpawn4.isSpawnP1 == false)
         {
             // Spawn sequence and reset timer
-            spawnKey();
+            spawnKeyP1();
+            timer = 0;
+
+            /*if (countSeq == 5 && round1 == true)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+                }
+                spawnRate = 5;
+                round1 = false;
+            }
+            else if (round1 == false)
+            {
+                spawnRate = 0.1;
+            }
+
+            if (countSeq == 10 && round2 == true)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+                }
+                spawnRate = 5;
+                round2 = false;
+            }
+            else if (round2 == false)
+            {
+                spawnRate = 0.1;
+            }
+
+            if (countSeq == 15 && round3 == true)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+                }
+                spawnRate = 5;
+                round3 = false;
+            }
+            else if (round3 == false)
+            {
+                spawnRate = 0.1;
+            }*/
+
+        }
+        else if(refIsSpawn8.isSpawnP2 == false)
+        {
+            spawnKeyP2();
             timer = 0;
         }
     }
 
     // spawnKey randomly creates key object
-    public void spawnKey()
+    public void spawnKeyP1()
     {
-        // Copy key prefab objects from given range of keys and rename them
-        var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
-        newPrefab.name = "Prefab " + gameObject.name;
+        if (gameObject.name == "Spawn1" || gameObject.name == "Spawn2" || gameObject.name == "Spawn3" || gameObject.name == "Spawn4")
+        {
+            // Copy key prefab objects from given range of keys and rename them
+            var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
+            newPrefab.name = "Prefab " + gameObject.name;
         
-        // Count sequence every time new sequence is spawned
-        countSeq++; 
-        print(countSeq);
+            // Count sequence every time new sequence is spawned
+            countSeq++; 
+            print(countSeq);
+        }
+        
+    }
+
+    public void spawnKeyP2()
+    {
+        if (gameObject.name == "Spawn5" || gameObject.name == "Spawn6" || gameObject.name == "Spawn7" || gameObject.name == "Spawn8")
+        {
+            // Copy key prefab objects from given range of keys and rename them
+            var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);
+            newPrefab.name = "Prefab " + gameObject.name;
+
+            // Count sequence every time new sequence is spawned
+            countSeqP2++;
+            print(countSeqP2);
+        }
     }
 }

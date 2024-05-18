@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6628080338231501895}
   m_Layer: 5
   m_Name: D
-  m_TagString: Right Key
+  m_TagString: D Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,3 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a9c42baaee61c47a9690e89f8b1ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refScript:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

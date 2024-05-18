@@ -10,6 +10,10 @@ TagManager:
   - Right Key
   - Key Holder
   - Audio
+  - W Key
+  - A Key
+  - S Key
+  - D Key
   layers:
   - Default
   - TransparentFX

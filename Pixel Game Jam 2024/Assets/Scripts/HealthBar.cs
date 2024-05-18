@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
 
-   // Slider starts at maximum health
+    // Slider starts at maximum health
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;

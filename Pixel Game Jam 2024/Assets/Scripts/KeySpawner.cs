@@ -12,9 +12,9 @@ public class KeySpawner : MonoBehaviour
     public double spawnRate = 0.1;
     private float timer = 0;
     
-    public int countSeq = 0, countSeqP2 = 0; // Sequence spawned counter
+    public int countSeqP1 = 0, countSeqP2 = 0; // Sequence spawned counter
 
-    //private bool round1 = true, round2 = true, round3 = true;
+    private bool round1 = true, round2 = true, round3 = true;
 
     [SerializeField] GameObject[] keyPrefab; // List for implementing keyPrefab
 
@@ -42,57 +42,17 @@ public class KeySpawner : MonoBehaviour
         // Else if sequence is not yet spawned
         else if (refIsSpawn4.isSpawnP1 == false)
         {
-            // Spawn sequence and reset timer
             spawnKeyP1();
             timer = 0;
 
-            /*if (countSeq == 5 && round1 == true)
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
-                }
-                spawnRate = 5;
-                round1 = false;
-            }
-            else if (round1 == false)
-            {
-                spawnRate = 0.1;
-            }
-
-            if (countSeq == 10 && round2 == true)
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
-                }
-                spawnRate = 5;
-                round2 = false;
-            }
-            else if (round2 == false)
-            {
-                spawnRate = 0.1;
-            }
-
-            if (countSeq == 15 && round3 == true)
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
-                }
-                spawnRate = 5;
-                round3 = false;
-            }
-            else if (round3 == false)
-            {
-                spawnRate = 0.1;
-            }*/
-
+            roundPause();
         }
-        else if(refIsSpawn8.isSpawnP2 == false)
+        else if (refIsSpawn8.isSpawnP2 == false)
         {
             spawnKeyP2();
             timer = 0;
+
+            roundPause();
         }
     }
 
@@ -106,10 +66,10 @@ public class KeySpawner : MonoBehaviour
             newPrefab.name = "Prefab " + gameObject.name;
         
             // Count sequence every time new sequence is spawned
-            countSeq++; 
-            print(countSeq);
+            countSeqP1++; 
+            print(countSeqP1);
         }
-        
+
     }
 
     public void spawnKeyP2()
@@ -123,6 +83,51 @@ public class KeySpawner : MonoBehaviour
             // Count sequence every time new sequence is spawned
             countSeqP2++;
             print(countSeqP2);
+        }
+    }
+
+    void roundPause()
+    {
+        if ((countSeqP1 == 5 || countSeqP2 == 5) && round1 == true)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+            }
+            spawnRate = 5;
+            round1 = false;
+        }
+        else if (round1 == false)
+        {
+            spawnRate = 0.1;
+        }
+
+        if ((countSeqP1 == 10 || countSeqP2 == 10) && round2 == true)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+            }
+            spawnRate = 5;
+            round2 = false;
+        }
+        else if (round2 == false)
+        {
+            spawnRate = 0.1;
+        }
+
+        if ((countSeqP1 == 15 || countSeqP2 == 15) && round3 == true)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
+            }
+            spawnRate = 5;
+            round3 = false;
+        }
+        else if (round3 == false)
+        {
+            spawnRate = 0.1;
         }
     }
 }

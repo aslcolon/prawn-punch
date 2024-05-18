@@ -18,35 +18,47 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (refIsSpawn4.isSpawnP1 == false)
+        if (gameObject.name == "P1")
         {
-            animator.SetBool("isPunchingP1", true);
-            animator.SetBool("isHurtP2", true);
-        }
-        else if (refIsSpawn4.isSpawnP1 == true)
-        {
-            animator.SetBool("isPunchingP1", false);
-            //yield return new WaitForSeconds(1);
-            StartCoroutine(delayHurt());
-            animator.SetBool("isHurtP2", false);
+            if (refIsSpawn4.isSpawnP1 == false)
+            {
+                animator.SetBool("isPunchingP1", true);
+            }
+            else if (refIsSpawn4.isSpawnP1 == true)
+            {
+                animator.SetBool("isPunchingP1", false);
+            }
+
+            if (refIsSpawn8.isSpawnP2 == false)
+            {
+                animator.SetBool("isHurtP1", true);
+            }
+            else if (refIsSpawn8.isSpawnP2 == true)
+            {
+                animator.SetBool("isHurtP1", false);
+            }
         }
 
-        if (refIsSpawn8.isSpawnP2 == false)
+        if (gameObject.name == "P2")
         {
-            animator.SetBool("isPunchingP2", true);
-            //yield return new WaitForSeconds(1);
-            StartCoroutine(delayHurt());
-            animator.SetBool("isHurtP1", true);
-        }
-        else if (refIsSpawn8.isSpawnP2 == true)
-        {
-            animator.SetBool("isPunchingP2", false);
-            animator.SetBool("isHurtP1", false);
+            if (refIsSpawn8.isSpawnP2 == false)
+            {
+                animator.SetBool("isPunchingP2", true);
+            }
+            else if (refIsSpawn8.isSpawnP2 == true)
+            {
+                animator.SetBool("isPunchingP2", false);
+            }
+
+            if (refIsSpawn4.isSpawnP1 == false)
+            {
+                animator.SetBool("isHurtP2", true);
+            }
+            else if (refIsSpawn4.isSpawnP1 == true)
+            {
+                animator.SetBool("isHurtP2", false);
+            }
         }
     }
 
-    IEnumerator delayHurt()
-    {
-        yield return new WaitForSeconds(5);
-    }
 }

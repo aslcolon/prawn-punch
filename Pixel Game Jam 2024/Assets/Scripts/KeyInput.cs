@@ -67,6 +67,7 @@ public class KeyInput : MonoBehaviour
                 }
                 break;
             }
+            
         }
 
         // Once the sequence is complete and P1 reaches last key holder

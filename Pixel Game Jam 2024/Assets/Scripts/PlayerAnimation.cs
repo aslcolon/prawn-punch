@@ -8,11 +8,16 @@ public class PlayerAnimation : MonoBehaviour
 
     public KeyHolder refIsSpawn4, refIsSpawn8;
 
+    public HealthBar refHealthP1, refHealthP2;
+
     // Start is called before the first frame update
     void Start()
     {
         refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
         refIsSpawn8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
+
+        refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
+        refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -37,6 +42,15 @@ public class PlayerAnimation : MonoBehaviour
             {
                 animator.SetBool("isHurtP1", false);
             }
+
+            if (refHealthP1.slider.value == 0)
+            {
+                animator.SetBool("isKnockedOutP1", true);
+            }
+            else if (refHealthP1.slider.value > 0)
+            {
+                animator.SetBool("isKnockedOutP1", false);
+            }
         }
 
         if (gameObject.name == "P2")
@@ -57,6 +71,15 @@ public class PlayerAnimation : MonoBehaviour
             else if (refIsSpawn4.isSpawnP1 == true)
             {
                 animator.SetBool("isHurtP2", false);
+            }
+
+            if (refHealthP2.slider.value == 0)
+            {
+                animator.SetBool("isKnockedOutP2", true);
+            }
+            else if (refHealthP2.slider.value > 0)
+            {
+                animator.SetBool("isKnockedOutP2", false);
             }
         }
     }

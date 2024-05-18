@@ -14,8 +14,6 @@ public class KeySpawner : MonoBehaviour
     
     public int countSeqP1 = 0, countSeqP2 = 0; // Sequence spawned counter
 
-    //private bool round1 = true, round2 = true, round3 = true;
-
     [SerializeField] GameObject[] keyPrefab; // List for implementing keyPrefab
 
     // Start is called before the first frame update

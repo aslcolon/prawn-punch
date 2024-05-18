@@ -29,7 +29,6 @@ public class PlayerAnimation : MonoBehaviour
             if (refIsSpawn4.isSpawnP1 == false)
             {
                 animator.SetBool("isPunchingP1", true);
-                //audioManager.PlaySFX(audioManager.punch);
             }
             else if (refIsSpawn4.isSpawnP1 == true)
             {

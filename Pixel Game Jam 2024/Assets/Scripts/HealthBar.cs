@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
 
     public KeyHolder refIsSpawn4, refIsSpawn8;
 
-    // Implement spawn timer
+    // Implement decrease timer
     public double decRate = 0.1;
     private float timer = 0;
 
@@ -26,8 +26,7 @@ public class HealthBar : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        // Else if sequence is not yet spawned, spawn key and reset timer
-        else if (refIsSpawn4.isSpawnP1 == false && gameObject.name == "Health bar P1")
+        else if (refIsSpawn4.isSpawnP1 == false && gameObject.name == "Health bar P2")
         {
             if (slider.value >= 4)
             {
@@ -36,7 +35,7 @@ public class HealthBar : MonoBehaviour
             
             timer = 0;
         }
-        else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P2")
+        else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P1")
         {
             if (slider.value >= 4)
             {

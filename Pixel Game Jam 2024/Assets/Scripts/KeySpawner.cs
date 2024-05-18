@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class KeySpawner : MonoBehaviour
 {
-    public KeyHolder refIsSpawn; // Reference isKey bool from KeyHolder script
+    public KeyHolderP1 refIsSpawn; // Reference isKey bool from KeyHolder script
+    //private string[] holdName = { "Key1", "Key2", "Key3", "Key4"};
 
     [SerializeField] GameObject[] keyPrefab;
 
@@ -12,17 +13,35 @@ public class KeySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*for (int i = 0; i < holdName.Length; i++)
+        {
+            refIsSpawn[i] = GameObject.Find(holdName[""]).GetComponent<KeyHolderP1>();
+        }*/
+
+        refIsSpawn = GameObject.Find("Key4").GetComponent<KeyHolderP1>();
+
         spawnKey(); // Call spawnKey to spawn random key on start
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(refIsSpawn.isSpawnP1 == false || refIsSpawn.isSpawnP2 == false)
+
+        /*for (int i = 0; i < holdName.Length; i++)
         {
-            print("should spawn");
+            if (refIsSpawn[i].isSpawnP1 == false)
+            {
+                //print("should spawn");
+                spawnKey();
+            }
+        }*/
+
+        if (refIsSpawn.isSpawnP1 == false)
+        {
+            //print("should spawn");
             spawnKey();
         }
+
 
         //spawnKey();
     }

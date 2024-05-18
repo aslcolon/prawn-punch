@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyHolder : MonoBehaviour
+public class KeyHolderP1 : MonoBehaviour
 {
 
     // Declare bool for key objects within collision area
     public int keyDirP1, keyDirP2;
-    public bool isSpawnP1 = true, isSpawnP2 = true;
+    public bool isSpawnP1 = true;
 
     //private string[] letterTag = { "W Key", "A Key", "S Key", "D Key" };
     //private string[] arrowTag = { "Up Key", "Left Key", "Down Key", "Right Key" };
@@ -32,44 +32,24 @@ public class KeyHolder : MonoBehaviour
         if (other.gameObject.CompareTag("W Key"))
         {
             keyDirP1 = 1;
-            isSpawnP2 = false;
+            //isSpawnP2 = false;
         }
         else if (other.gameObject.CompareTag("A Key"))
         {
             keyDirP1 = 2;
-            isSpawnP2 = false;
+            //isSpawnP2 = false;
         }
         else if (other.gameObject.CompareTag("S Key"))
         {
             keyDirP1 = 3;
-            isSpawnP2 = false;
+            //isSpawnP2 = false;
         }
         else if (other.gameObject.CompareTag("D Key"))
         {
             keyDirP1 = 4;
-            isSpawnP2 = false;
+            //isSpawnP2 = false;
         }
 
-        if (other.gameObject.CompareTag("Up Key"))
-        {
-            keyDirP2 = 1;
-            isSpawnP1 = false;
-        }
-        else if (other.gameObject.CompareTag("Left Key"))
-        {
-            keyDirP2 = 2;
-            isSpawnP1 = false;
-        }
-        else if (other.gameObject.CompareTag("Down Key"))
-        {
-            keyDirP2 = 3;
-            isSpawnP1 = false;
-        }
-        else if (other.gameObject.CompareTag("Right Key"))
-        {
-            keyDirP2 = 4;
-            isSpawnP1 = false;
-        }
 
         /*for (int i = 0; i < letterTag.Length; i++)
         {
@@ -107,10 +87,10 @@ public class KeyHolder : MonoBehaviour
             isSpawnP1 = false;
         }
 
-        if (other.gameObject.CompareTag("Up Key") || other.gameObject.CompareTag("Left Key") || other.gameObject.CompareTag("Down Key") || other.gameObject.CompareTag("Right Key"))
+        /*if (other.gameObject.CompareTag("Up Key") || other.gameObject.CompareTag("Left Key") || other.gameObject.CompareTag("Down Key") || other.gameObject.CompareTag("Right Key"))
         {
             isSpawnP2 = false;
-        }
+        }*/
 
         /*if (other.gameObject.name == "Prefab Spawn1")
         {

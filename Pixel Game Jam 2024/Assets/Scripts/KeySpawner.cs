@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KeySpawner : MonoBehaviour
 {
     public KeyHolderP1 refIsSpawn; // Reference isKey bool from KeyHolder script
     //private string[] holdName = { "Key1", "Key2", "Key3", "Key4"};
+
+    private bool spawnOnce = false;
 
     [SerializeField] GameObject[] keyPrefab;
 
@@ -36,12 +39,12 @@ public class KeySpawner : MonoBehaviour
             }
         }*/
 
-        if (refIsSpawn.isSpawnP1 == false)
+        if (refIsSpawn.isSpawnP1 == false && spawnOnce == false)
         {
             //print("should spawn");
             spawnKey();
+            spawnOnce = true;
         }
-
 
         //spawnKey();
     }

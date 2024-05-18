@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 146178000}
   - component: {fileID: 146178001}
   - component: {fileID: 146178002}
+  - component: {fileID: 146178003}
   m_Layer: 0
   m_Name: P2
   m_TagString: Untagged
@@ -520,6 +521,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &146178003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146177999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9754f4bbf187693439d38bfa6a7f3edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 146178002}
+  refIsSpawn4: {fileID: 0}
+  refIsSpawn8: {fileID: 0}
 --- !u!1001 &204028564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1827,6 +1843,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1078353268}
+  refIsSpawn4: {fileID: 0}
+  refIsSpawn8: {fileID: 0}
+  decRate: 0.1
 --- !u!1 &1151447058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,6 +2515,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1552319851}
+  refIsSpawn4: {fileID: 0}
+  refIsSpawn8: {fileID: 0}
+  decRate: 0.1
 --- !u!1 &1555093544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 407090899550459419, guid: 8762688289a03524597eb2b7c0cedeb1, type: 3}
@@ -2528,6 +2550,7 @@ GameObject:
   - component: {fileID: 1576863263}
   - component: {fileID: 1576863264}
   - component: {fileID: 1576863265}
+  - component: {fileID: 1576863266}
   m_Layer: 0
   m_Name: P1
   m_TagString: Untagged
@@ -2623,6 +2646,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1576863266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576863262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9754f4bbf187693439d38bfa6a7f3edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1576863265}
+  refIsSpawn4: {fileID: 0}
+  refIsSpawn8: {fileID: 0}
 --- !u!1001 &1624847599
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class KeySpawner : MonoBehaviour
     
     public int countSeqP1 = 0, countSeqP2 = 0; // Sequence spawned counter
 
-    private bool round1 = true, round2 = true, round3 = true;
-
     [SerializeField] GameObject[] keyPrefab; // List for implementing keyPrefab
 
     // Start is called before the first frame update
@@ -25,9 +23,10 @@ public class KeySpawner : MonoBehaviour
         refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
         refIsSpawn8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
 
-        spawnRate = 0.1;
+        spawnRate = 0.1; // Initialize spawnRate
 
-        spawnKeyP1(); // Call spawnKey to spawn random key on start
+        // Call spawnKey to spawn random keys on start
+        spawnKeyP1(); 
         spawnKeyP2();
     }
 
@@ -39,32 +38,17 @@ public class KeySpawner : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        // Else if sequence is not yet spawned
+        // Else if sequence is not yet spawned, spawn key and reset timer
         else if (refIsSpawn4.isSpawnP1 == false)
         {
             spawnKeyP1();
             timer = 0;
-
-            //roundPause(countSeqP1);
         }
         else if (refIsSpawn8.isSpawnP2 == false)
         {
             spawnKeyP2();
             timer = 0;
-
-            //roundPause(countSeqP2);
         }
-
-        /*if (countSeqP1 == 5)
-        {
-            countSeqP1 = 0;
-            countSeqP2 = 0;
-        }
-        if (countSeqP2 == 5)
-        {
-            countSeqP2 = 0;
-            countSeqP1 = 0;
-        }*/
     }
 
     // spawnKey randomly creates key object
@@ -97,7 +81,7 @@ public class KeySpawner : MonoBehaviour
         }
     }
 
-    void roundPause(int countSeq)
+    /*void roundPause(int countSeq)
     {
         if (countSeq == 5  && round1 == true)
         {
@@ -147,5 +131,5 @@ public class KeySpawner : MonoBehaviour
         {
             spawnRate = 0.1;
         }
-    }
+    }*/
 }

@@ -8,16 +8,40 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
 
-    // Slider starts at maximum health
-    public void SetMaxHealth(int health)
+    public KeyHolder refIsSpawn4, refIsSpawn8;
+
+    // Implement decrease timer
+    public double decRate = 0.1;
+    private float timer = 0;
+
+    private void Start()
     {
-        slider.maxValue = health;
-        slider.value = health;
+        refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
+        refIsSpawn8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
     }
-   
-    public void setHealth(int health)
+
+    private void Update()
     {
-        slider.value = health;
+        if (timer < decRate)
+        {
+            timer += Time.deltaTime;
+        }
+        else if (refIsSpawn4.isSpawnP1 == false && gameObject.name == "Health bar P2")
+        {
+            //if (slider.value >= 4)
+            //{
+                slider.value -= 50;
+            //}
+            
+            timer = 0;
+        }
+        else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P1")
+        {
+            //if (slider.value >= 4)
+            //{
+                slider.value -= 50;
+            //}
+            timer = 0;
+        }
     }
-    
 }

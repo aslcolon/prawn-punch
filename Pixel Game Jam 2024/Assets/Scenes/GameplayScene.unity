@@ -1827,6 +1827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1078353268}
+  refIsSpawn4: {fileID: 0}
+  refIsSpawn8: {fileID: 0}
+  decRate: 0.1
 --- !u!1 &1151447058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,7 +2148,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2496,6 +2499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1552319851}
+  refIsSpawn4: {fileID: 0}
+  refIsSpawn8: {fileID: 0}
+  decRate: 0.1
 --- !u!1 &1555093544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 407090899550459419, guid: 8762688289a03524597eb2b7c0cedeb1, type: 3}

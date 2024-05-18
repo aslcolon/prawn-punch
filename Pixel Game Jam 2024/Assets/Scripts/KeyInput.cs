@@ -20,6 +20,8 @@ public class KeyInput : MonoBehaviour
     // isHit checks if input is correct while wrongInput checks if input is incorrect
     private bool isHitP1 = false, isHitP2 = false, wrongInputP1 = false, wrongInputP2 = false;
 
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +127,11 @@ public class KeyInput : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Check if key input matches key displayed for P1
     void checkInputP1(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
@@ -137,6 +144,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP1);
                 isHitP1 = true;
                 wrongInputP1 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if(Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4)) 
             {
@@ -153,6 +161,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP1);
                 isHitP1 = true;
                 wrongInputP1 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
@@ -169,6 +178,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP1);
                 isHitP1 = true;
                 wrongInputP1 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
@@ -185,6 +195,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP1);
                 isHitP1 = true;
                 wrongInputP1 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {
@@ -206,6 +217,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP2);
                 isHitP2 = true;
                 wrongInputP2 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key2) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
@@ -222,6 +234,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP2);
                 isHitP2 = true;
                 wrongInputP2 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key3) || Input.GetKeyDown(key4))
             {
@@ -238,6 +251,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP2);
                 isHitP2 = true;
                 wrongInputP2 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key4))
             {
@@ -254,6 +268,7 @@ public class KeyInput : MonoBehaviour
                 print(holdCountP2);
                 isHitP2 = true;
                 wrongInputP2 = false;
+                audioManager.PlaySFX(audioManager.bubblePop);
             }
             else if (Input.GetKeyDown(key1) || Input.GetKeyDown(key2) || Input.GetKeyDown(key3))
             {

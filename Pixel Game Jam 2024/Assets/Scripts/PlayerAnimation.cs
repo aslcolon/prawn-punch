@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    //AudioManager audioManager;
 
     public Animator animator;
 
@@ -40,7 +39,6 @@ public class PlayerAnimation : MonoBehaviour
             if (refIsSpawn8.isSpawnP2 == false)
             {
                 animator.SetBool("isHurtP1", true);
-                //audioManager.PlaySFX(audioManager.hurt);
             }
             else if (refIsSpawn8.isSpawnP2 == true)
             {
@@ -62,7 +60,6 @@ public class PlayerAnimation : MonoBehaviour
             if (refIsSpawn8.isSpawnP2 == false)
             {
                 animator.SetBool("isPunchingP2", true);
-                //audioManager.PlaySFX(audioManager.punch);
             }
             else if (refIsSpawn8.isSpawnP2 == true)
             {
@@ -72,7 +69,6 @@ public class PlayerAnimation : MonoBehaviour
             if (refIsSpawn4.isSpawnP1 == false)
             {
                 animator.SetBool("isHurtP2", true);
-                //audioManager.PlaySFX(audioManager.hurt);
             }
             else if (refIsSpawn4.isSpawnP1 == true)
             {

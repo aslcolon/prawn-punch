@@ -45,24 +45,26 @@ public class KeySpawner : MonoBehaviour
             spawnKeyP1();
             timer = 0;
 
-            roundPause(countSeqP1);
+            //roundPause(countSeqP1);
         }
         else if (refIsSpawn8.isSpawnP2 == false)
         {
             spawnKeyP2();
             timer = 0;
 
-            roundPause(countSeqP2);
+            //roundPause(countSeqP2);
         }
 
-        if (countSeqP1 == 5)
+        /*if (countSeqP1 == 5)
         {
             countSeqP1 = 0;
+            countSeqP2 = 0;
         }
         if (countSeqP2 == 5)
         {
             countSeqP2 = 0;
-        }
+            countSeqP1 = 0;
+        }*/
     }
 
     // spawnKey randomly creates key object

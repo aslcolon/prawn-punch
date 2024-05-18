@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class KeySpawner : MonoBehaviour
 {
-
+    public KeyInput refIsComplete;
     public KeyHolder refIsSpawn; // Reference isKey bool from KeyHolder script
     private string[] holdName = { "Key1", "Key2", "Key3", "Key4", "Key5", "Key6", "Key7", "Key8" };
+    public int keyNum;
+
 
     [SerializeField] GameObject[] keyPrefab;
 
@@ -29,10 +31,12 @@ public class Key : MonoBehaviour
         {
             spawnKey();
         }
+
+        //spawnKey();
     }
 
     // spawnKey randomly creates key object
-    void spawnKey()
+    public void spawnKey()
     {
         // Copy key prefab objects from given range of keys
         var newPrefab = Instantiate(keyPrefab[Random.Range(0, keyPrefab.Length)], transform.position, transform.rotation);

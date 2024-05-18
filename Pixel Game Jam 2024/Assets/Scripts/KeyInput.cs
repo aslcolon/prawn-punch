@@ -74,7 +74,7 @@ public class KeyInput : MonoBehaviour
         {
             holdCountP1 = 0; // Reset key holder number
             // Destroy all key game objects within sequence 
-            for(int i = 0; i < holdName.Length / 2; i++)
+            for (int i = 0; i < holdName.Length / 2; i++)
             {
                 Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
             }

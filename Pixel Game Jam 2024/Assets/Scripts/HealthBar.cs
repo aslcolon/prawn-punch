@@ -8,6 +8,8 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
 
+    AudioManager audioManager;
+
     public KeyHolder refIsSpawn4, refIsSpawn8;
 
     // Implement decrease timer
@@ -32,7 +34,8 @@ public class HealthBar : MonoBehaviour
             //{
                 slider.value -= 50;
             //}
-            
+            //audioManager.PlaySFX(audioManager.punch);
+            //audioManager.PlaySFX(audioManager.hurt);
             timer = 0;
         }
         else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P1")
@@ -41,6 +44,8 @@ public class HealthBar : MonoBehaviour
             //{
                 slider.value -= 50;
             //}
+            //audioManager.PlaySFX(audioManager.punch);
+            //audioManager.PlaySFX(audioManager.hurt);
             timer = 0;
         }
     }

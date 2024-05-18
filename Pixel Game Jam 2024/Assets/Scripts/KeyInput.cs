@@ -7,6 +7,8 @@ using UnityEngine;
 public class KeyInput : MonoBehaviour
 {
 
+    AudioManager audioManager;
+
     // Declare KeyHolder to reference KeyHolder script integers
     public KeyHolder[] refScript = new KeyHolder[8];
 
@@ -19,8 +21,6 @@ public class KeyInput : MonoBehaviour
     // Declare bool for P1 and P2 for checking inputs
     // isHit checks if input is correct while wrongInput checks if input is incorrect
     private bool isHitP1 = false, isHitP2 = false, wrongInputP1 = false, wrongInputP2 = false;
-
-    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +81,8 @@ public class KeyInput : MonoBehaviour
             {
                 Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
             }
+            audioManager.PlaySFX(audioManager.punch);
+            audioManager.PlaySFX(audioManager.hurt);
         }
 
         // Check P2 key input for ascending key holder
@@ -124,6 +126,8 @@ public class KeyInput : MonoBehaviour
             {
                 Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
             }
+            audioManager.PlaySFX(audioManager.punch);
+            audioManager.PlaySFX(audioManager.hurt);
         }
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8774179833100361322}
   m_Layer: 5
   m_Name: S
-  m_TagString: Down Key
+  m_TagString: S Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,3 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a9c42baaee61c47a9690e89f8b1ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refScript:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

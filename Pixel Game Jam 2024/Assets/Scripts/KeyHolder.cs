@@ -6,8 +6,11 @@ public class KeyHolder : MonoBehaviour
 {
 
     // Declare bool for key objects within collision area
-    public int keyDir;
+    public int keyDirP1, keyDirP2;
     public bool isSpawnP1 = true, isSpawnP2 = true;
+
+    //private string[] letterTag = { "W Key", "A Key", "S Key", "D Key" };
+    //private string[] arrowTag = { "Up Key", "Left Key", "Down Key", "Right Key" };
 
     // Start is called before the first frame update
     void Start()
@@ -26,22 +29,65 @@ public class KeyHolder : MonoBehaviour
     {
         // For each tag checked, bool is true for the corresponding key
         // 1-Up, 2-Left, 3-Down, 4-Right
-        if (other.gameObject.tag == "Up Key")
+        if (other.gameObject.CompareTag("W Key"))
         {
-            keyDir = 1;
+            keyDirP1 = 1;
+            isSpawnP2 = false;
         }
-        else if (other.gameObject.tag == "Left Key")
+        else if (other.gameObject.CompareTag("A Key"))
         {
-            keyDir = 2;
+            keyDirP1 = 2;
+            isSpawnP2 = false;
         }
-        else if (other.gameObject.tag == "Down Key")
+        else if (other.gameObject.CompareTag("S Key"))
         {
-            keyDir = 3;
+            keyDirP1 = 3;
+            isSpawnP2 = false;
         }
-        else if (other.gameObject.tag == "Right Key")
+        else if (other.gameObject.CompareTag("D Key"))
         {
-            keyDir = 4;
+            keyDirP1 = 4;
+            isSpawnP2 = false;
         }
+
+        if (other.gameObject.CompareTag("Up Key"))
+        {
+            keyDirP2 = 1;
+            isSpawnP1 = false;
+        }
+        else if (other.gameObject.CompareTag("Left Key"))
+        {
+            keyDirP2 = 2;
+            isSpawnP1 = false;
+        }
+        else if (other.gameObject.CompareTag("Down Key"))
+        {
+            keyDirP2 = 3;
+            isSpawnP1 = false;
+        }
+        else if (other.gameObject.CompareTag("Right Key"))
+        {
+            keyDirP2 = 4;
+            isSpawnP1 = false;
+        }
+
+        /*for (int i = 0; i < letterTag.Length; i++)
+        {
+            if (other.gameObject.tag == letterTag[i])
+            {
+                keyDirP1 = i + 1;
+                isSpawnP2 = false;
+            }
+        }
+
+        for (int i = 0; i < arrowTag.Length;i++)
+        {
+            if (other.gameObject.tag == arrowTag[i])
+            {
+                keyDirP2 = i + 1;
+                isSpawnP1 = false;
+            }
+        }*/
 
     }
 
@@ -56,10 +102,20 @@ public class KeyHolder : MonoBehaviour
             }
         }*/
 
-        if (other.gameObject.tag == "Up Key" || other.gameObject.tag == "Left Key" || other.gameObject.tag == "Down Key" || other.gameObject.tag == "Right Key")
+        if (other.gameObject.CompareTag("W Key") || other.gameObject.CompareTag("A Key") || other.gameObject.CompareTag("S Key") || other.gameObject.CompareTag("D Key"))
         {
             isSpawnP1 = false;
         }
-        
+
+        if (other.gameObject.CompareTag("Up Key") || other.gameObject.CompareTag("Left Key") || other.gameObject.CompareTag("Down Key") || other.gameObject.CompareTag("Right Key"))
+        {
+            isSpawnP2 = false;
+        }
+
+        /*if (other.gameObject.name == "Prefab Spawn1")
+        {
+            isSpawnP1 = false;
+        }*/
+
     }
 }

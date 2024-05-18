@@ -21,6 +21,8 @@ public class KeyInput : MonoBehaviour
     // isHit checks if input is correct while wrongInput checks if input is incorrect
     private bool isHitP1 = false, isHitP2 = false, wrongInputP1 = false, wrongInputP2 = false;
 
+    public bool isCompleteP1 = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +80,7 @@ public class KeyInput : MonoBehaviour
         // Once the sequence is complete and P1 reaches last key holder
         if (holdCountP1 == 4)
         {
+            isCompleteP1 = true;
             holdCountP1 = 0; // Reset key holder number
             // Destroy all key game objects within sequence 
             for (int i = 0; i < holdName.Length / 2; i++)

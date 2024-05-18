@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refIsSpawn: []
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refIsSpawn: []
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refIsSpawn: []
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -1499,7 +1499,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 624075934}
-  - component: {fileID: 624075935}
   m_Layer: 5
   m_Name: Spawn5
   m_TagString: Untagged
@@ -1522,24 +1521,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658298630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &624075935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624075933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refIsSpawn: []
-  keyPrefab:
-  - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
-  - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
-  - {fileID: 5016222451843838782, guid: 32a74adcf755fd74aba0f1c219b72614, type: 3}
-  - {fileID: 3327242008488843228, guid: d2e70567bc973ca46817e0d23db7b110, type: 3}
 --- !u!1 &624175012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1530,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 624175013}
-  - component: {fileID: 624175014}
   m_Layer: 5
   m_Name: Spawn8
   m_TagString: Untagged
@@ -1572,24 +1552,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658298630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &624175014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624175012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refIsSpawn: []
-  keyPrefab:
-  - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
-  - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
-  - {fileID: 5016222451843838782, guid: 32a74adcf755fd74aba0f1c219b72614, type: 3}
-  - {fileID: 3327242008488843228, guid: d2e70567bc973ca46817e0d23db7b110, type: 3}
 --- !u!1 &631905530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 407090899550459419, guid: 8762688289a03524597eb2b7c0cedeb1, type: 3}
@@ -2344,7 +2306,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227662942}
-  - component: {fileID: 1227662943}
   m_Layer: 5
   m_Name: Spawn7
   m_TagString: Untagged
@@ -2367,24 +2328,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658298630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1227662943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227662941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refIsSpawn: []
-  keyPrefab:
-  - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
-  - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
-  - {fileID: 5016222451843838782, guid: 32a74adcf755fd74aba0f1c219b72614, type: 3}
-  - {fileID: 3327242008488843228, guid: d2e70567bc973ca46817e0d23db7b110, type: 3}
 --- !u!1001 &1250614140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2694,7 +2637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refIsSpawn: []
+  refIsSpawn: {fileID: 0}
   keyPrefab:
   - {fileID: 8493377208138288645, guid: 758b177bde60c574ba06eebf35ae5340, type: 3}
   - {fileID: 5422512439858589256, guid: 4c68f10d043cdaa4eb8cb15b57e71234, type: 3}
@@ -3130,7 +3073,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1746284955}
-  - component: {fileID: 1746284956}
   m_Layer: 5
   m_Name: Spawn6
   m_TagString: Untagged
@@ -3153,24 +3095,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658298630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1746284956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746284954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99280021fcf27ef4897da99bfda91728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refIsSpawn: []
-  keyPrefab:
-  - {fileID: 5675166799140033615, guid: a9915fab6f5359d428b073a425f174f8, type: 3}
-  - {fileID: 6988345349414743484, guid: ddb58fdf219bf5c4599d085676e575e7, type: 3}
-  - {fileID: 5016222451843838782, guid: 32a74adcf755fd74aba0f1c219b72614, type: 3}
-  - {fileID: 3327242008488843228, guid: d2e70567bc973ca46817e0d23db7b110, type: 3}
 --- !u!1 &1811578585
 GameObject:
   m_ObjectHideFlags: 0

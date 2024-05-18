@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class KeySpawner : MonoBehaviour
 {
-    public KeyHolderP1 refIsSpawn; // Reference isKey bool from KeyHolder script
+    //public KeyHolderP1 refIsSpawn1; // Reference isKey bool from KeyHolder script
     //private string[] holdName = { "Key1", "Key2", "Key3", "Key4"};
+    //public KeyHolderP1 refIsSpawn2;
+    //public KeyHolderP1 refIsSpawn3;
+    public KeyHolderP1 refIsSpawn4;
 
-    private bool spawnOnce = false;
+    public float spawnRate = 1;
+    private float timer = 0;
+
+    //private bool spawnOnce = false;
 
     [SerializeField] GameObject[] keyPrefab;
 
@@ -16,12 +22,10 @@ public class KeySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*for (int i = 0; i < holdName.Length; i++)
-        {
-            refIsSpawn[i] = GameObject.Find(holdName[""]).GetComponent<KeyHolderP1>();
-        }*/
-
-        refIsSpawn = GameObject.Find("Key4").GetComponent<KeyHolderP1>();
+        //refIsSpawn1 = GameObject.Find("Key1").GetComponent<KeyHolderP1>();
+        //refIsSpawn2 = GameObject.Find("Key2").GetComponent<KeyHolderP1>();
+        //refIsSpawn3 = GameObject.Find("Key3").GetComponent<KeyHolderP1>();
+        refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolderP1>();
 
         spawnKey(); // Call spawnKey to spawn random key on start
     }
@@ -30,21 +34,41 @@ public class KeySpawner : MonoBehaviour
     void Update()
     {
 
-        /*for (int i = 0; i < holdName.Length; i++)
+        if (timer < spawnRate)
         {
-            if (refIsSpawn[i].isSpawnP1 == false)
-            {
-                //print("should spawn");
-                spawnKey();
-            }
-        }*/
-
-        if (refIsSpawn.isSpawnP1 == false && spawnOnce == false)
+            timer += Time.deltaTime;
+        }
+        else if (refIsSpawn4.isSpawnP1 == false)
         {
             //print("should spawn");
             spawnKey();
-            spawnOnce = true;
+            //spawnOnce = true;
+            timer = 0;
         }
+
+        /*if (refIsSpawn2.isSpawnP1 == false)
+        {
+            //print("should spawn");
+            spawnKey();
+            //spawnOnce = true;
+        }
+        if (refIsSpawn3.isSpawnP1 == false)
+        {
+            //print("should spawn");
+            spawnKey();
+            //spawnOnce = true;
+        }
+        if (refIsSpawn4.isSpawnP1 == false)
+        {
+            //print("should spawn");
+            spawnKey();
+            //spawnOnce = true;
+        }*/
+
+        /*else if(refIsSpawn.isSpawnP1 == false)
+        {
+            spawnOnce = false;
+        }*/
 
         //spawnKey();
     }

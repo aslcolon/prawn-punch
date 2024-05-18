@@ -536,6 +536,8 @@ MonoBehaviour:
   animator: {fileID: 146178002}
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
+  refHealthP1: {fileID: 0}
+  refHealthP2: {fileID: 0}
 --- !u!1001 &204028564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1590,6 +1592,7 @@ MonoBehaviour:
   cursorExit: {fileID: 8300000, guid: 2a96ceede25a7a64b80e699b469ab438, type: 3}
   cursorHover: {fileID: 8300000, guid: 21713ebb256b4ff4589c8ece475186fd, type: 3}
   cursorSelect: {fileID: 8300000, guid: d702306cdabff854d9c7ab0a04af3a77, type: 3}
+  bubblePop: {fileID: 8300000, guid: b695623e1dcfada4e801bc4f7e98d8df, type: 3}
 --- !u!4 &843674561
 Transform:
   m_ObjectHideFlags: 0
@@ -2661,6 +2664,8 @@ MonoBehaviour:
   animator: {fileID: 1576863265}
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
+  refHealthP1: {fileID: 0}
+  refHealthP2: {fileID: 0}
 --- !u!1001 &1624847599
 PrefabInstance:
   m_ObjectHideFlags: 0

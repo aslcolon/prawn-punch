@@ -45,14 +45,14 @@ public class KeySpawner : MonoBehaviour
             spawnKeyP1();
             timer = 0;
 
-            roundPause();
+            roundPause(countSeqP1, countSeqP2);
         }
         else if (refIsSpawn8.isSpawnP2 == false)
         {
             spawnKeyP2();
             timer = 0;
 
-            roundPause();
+            roundPause(countSeqP2, countSeqP1);
         }
     }
 
@@ -86,9 +86,9 @@ public class KeySpawner : MonoBehaviour
         }
     }
 
-    void roundPause()
+    void roundPause(int countSeq, int otherCount)
     {
-        if ((countSeqP1 == 5 || countSeqP2 == 5) && round1 == true)
+        if (countSeq == 5  && round1 == true)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -96,13 +96,18 @@ public class KeySpawner : MonoBehaviour
             }
             spawnRate = 5;
             round1 = false;
+
+            if (otherCount < 5)
+            {
+                otherCount = 5;
+            }
         }
         else if (round1 == false)
         {
             spawnRate = 0.1;
         }
 
-        if ((countSeqP1 == 10 || countSeqP2 == 10) && round2 == true)
+        if (countSeq == 10 && round2 == true)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -110,13 +115,18 @@ public class KeySpawner : MonoBehaviour
             }
             spawnRate = 5;
             round2 = false;
+
+            if (otherCount < 10)
+            {
+                otherCount = 10;
+            }
         }
         else if (round2 == false)
         {
             spawnRate = 0.1;
         }
 
-        if ((countSeqP1 == 15 || countSeqP2 == 15) && round3 == true)
+        if (countSeq == 15 && round3 == true)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -124,6 +134,11 @@ public class KeySpawner : MonoBehaviour
             }
             spawnRate = 5;
             round3 = false;
+
+            if (otherCount < 15)
+            {
+                otherCount = 15;
+            }
         }
         else if (round3 == false)
         {

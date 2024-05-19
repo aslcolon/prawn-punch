@@ -25,7 +25,10 @@ public class NewRou : MonoBehaviour
         refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
         refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
 
+        
+
         nextRound();
+
         Invoke(nameof(currentRound), 2);
 
     }

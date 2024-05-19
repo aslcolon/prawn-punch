@@ -28,9 +28,9 @@ public class HealthBar : MonoBehaviour
         }
         else if (refIsSpawn4.isSpawnP1 == false && gameObject.name == "Health bar P2")
         {
-            if (slider.value >= 50)
+            if (slider.value >= 4)
             {
-                slider.value -= 50;
+                slider.value -= 4;
             }
             else if (slider.value == 0)
             {
@@ -43,9 +43,9 @@ public class HealthBar : MonoBehaviour
         }
         else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P1")
         {
-            if (slider.value >= 50)
+            if (slider.value >= 4)
             {
-                slider.value -= 50;
+                slider.value -= 4;
             }
             else if (slider.value == 0)
             {

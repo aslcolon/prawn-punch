@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class LifeCounter : MonoBehaviour
 {
 
-    public HealthBar refHealthP1, refHealthP2;
+    //public HealthBar refHealthP1, refHealthP2;
 
-    public GameObject roundPopupPrefab;
+    //public GameObject roundPopupPrefab;
 
-    private bool round2 = false, round3 = false;
+    //private bool round2 = false, round3 = false;
 
-    public Sprite round2Sprite;
-    public Sprite round3Sprite;
+    //public Sprite round2Sprite;
+    //public Sprite round3Sprite;
 
     //private int roundCount = 0;
 
@@ -22,8 +22,8 @@ public class LifeCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
-        refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
+        //refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
+        //refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -98,7 +98,7 @@ public class LifeCounter : MonoBehaviour
             }    
         }*/
 
-        if (refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0)
+        /*if (refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0)
         {
             if (round2 == false)
             {
@@ -135,10 +135,10 @@ public class LifeCounter : MonoBehaviour
             {
                 GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled = true;
             }
-        }
+        }*/
     }
 
-    private void nextRound()
+    /*private void nextRound()
     {
 
         if (round2 == false)
@@ -157,7 +157,7 @@ public class LifeCounter : MonoBehaviour
             roundPopup.GetComponent<SpriteRenderer>().sprite = round3Sprite;
             round3 = true;
         }
-        /*else if (roundCount == 2)
+        else if (roundCount == 2)
         {
             refHealthP1.slider.value = 100;
             refHealthP2.slider.value = 100;
@@ -203,10 +203,10 @@ public class LifeCounter : MonoBehaviour
             refHealthP2.slider.value = 100;
             var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
             round2 = true;
-        }*/
-    }
+        }
+    }*/
 
-    private void currentRound()
+    /*private void currentRound()
     {
 
         if (round2 == true)
@@ -278,6 +278,6 @@ public class LifeCounter : MonoBehaviour
                 GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<SpriteRenderer>().enabled = true;
             }
         }*/
-    }
+    
 }
 

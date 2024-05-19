@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeCounter : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class LifeCounter : MonoBehaviour
     public HealthBar refHealthP1, refHealthP2;
 
     public GameObject roundPopupPrefab;
+
+    private bool round2 = false;
+
+    //public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +27,36 @@ public class LifeCounter : MonoBehaviour
         if (refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0)
         {
             GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled = false;
-            var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
+            Invoke("nextRound", 3);
+            //var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
+            //SceneManager.LoadScene("GameplayScene");
         }
         else if (refHealthP2.slider.value == 0 && refHealthP1.slider.value > 0)
         {
             GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled = false;
-            var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
+            Invoke("nextRound", 3);
+            //var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
+            //SceneManager.LoadScene("GameplayScene");
 
+        }
+
+    }
+
+    private void nextRound()
+    {
+        if (round2 == false)
+        {
+            refHealthP1.slider.value = 100;
+            refHealthP2.slider.value = 100;
+            var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
+        }
+
+        round2 = true;
+
+        if (round2 == true)
+        {
+            Destroy(GameObject.Find("roundPopup"));
         }
     }
 }
+

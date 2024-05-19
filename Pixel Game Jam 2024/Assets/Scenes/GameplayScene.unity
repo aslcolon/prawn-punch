@@ -2139,6 +2139,7 @@ MonoBehaviour:
   refHealthP1: {fileID: 0}
   refHealthP2: {fileID: 0}
   roundPopupPrefab: {fileID: 6841402168217856111, guid: 6b279efabda3d4c4cb6074aee4efa23a, type: 3}
+  animator: {fileID: 1576863265}
 --- !u!1 &1078353266
 GameObject:
   m_ObjectHideFlags: 0

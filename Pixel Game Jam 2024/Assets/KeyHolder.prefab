@@ -90,7 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb0d5f5ca4067d49ad0bf170d2e7fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUp: 0
-  isLeft: 0
-  isDown: 0
-  isRight: 0
+  numOfKeys: 4
+  keyDirP1: 0
+  keyDirP2: 0
+  isSpawnP1: 1
+  isSpawnP2: 1

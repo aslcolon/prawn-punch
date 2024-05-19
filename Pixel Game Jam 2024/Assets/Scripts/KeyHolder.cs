@@ -6,20 +6,8 @@ using UnityEngine;
 public class KeyHolder : MonoBehaviour
 {
 
-    public int keyDirP1, keyDirP2; // Declare key direction with corresponding integer
+    public int keyDirP1; // Declare key direction with corresponding integer
     public bool isSpawnP1 = true, isSpawnP2 = true; // Declare bool for key objects within collision area
-
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     // Check which key is displayed when object enters collision area
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,39 +24,39 @@ public class KeyHolder : MonoBehaviour
 
         // For each tag compared, key direction is determined
         // 1-Up, 2-Left, 3-Down, 4-Right
-        if (other.gameObject.CompareTag("W Key"))
+        if (other.gameObject.CompareTag("W Key") || other.gameObject.CompareTag("Up Key"))
         {
             keyDirP1 = 1;
         }
-        else if (other.gameObject.CompareTag("A Key"))
+        else if (other.gameObject.CompareTag("A Key") || other.gameObject.CompareTag("Left Key"))
         {
             keyDirP1 = 2;
         }
-        else if (other.gameObject.CompareTag("S Key"))
+        else if (other.gameObject.CompareTag("S Key") || other.gameObject.CompareTag("Down Key"))
         {
             keyDirP1 = 3;
         }
-        else if (other.gameObject.CompareTag("D Key"))
+        else if (other.gameObject.CompareTag("D Key") || other.gameObject.CompareTag("Right Key"))
         {
             keyDirP1 = 4;
         }
 
-        if (other.gameObject.CompareTag("Up Key"))
+        /*if (other.gameObject.CompareTag("Up Key") && (gameObject.name == "Key5" || gameObject.name == "Key6" || gameObject.name == "Key7" || gameObject.name == "Key8"))
         {
-            keyDirP2 = 1;
+            keyDirP1 = 1;
         }
-        else if (other.gameObject.CompareTag("Left Key"))
+        else if (other.gameObject.CompareTag("Left Key") && (gameObject.name == "Key5" || gameObject.name == "Key6" || gameObject.name == "Key7" || gameObject.name == "Key8"))
         {
-            keyDirP2 = 2;
+            keyDirP1 = 2;
         }
-        else if (other.gameObject.CompareTag("Down Key"))
+        else if (other.gameObject.CompareTag("Down Key") && (gameObject.name == "Key5" || gameObject.name == "Key6" || gameObject.name == "Key7" || gameObject.name == "Key8"))
         {
-            keyDirP2 = 3;
+            keyDirP1 = 3;
         }
-        else if (other.gameObject.CompareTag("Right Key"))
+        else if (other.gameObject.CompareTag("Right Key") && (gameObject.name == "Key5" || gameObject.name == "Key6" || gameObject.name == "Key7" || gameObject.name == "Key8"))
         {
-            keyDirP2 = 4;
-        }
+            keyDirP1 = 4;
+        }*/
     }
 
     // Check when sequence exits collision area and destroyed

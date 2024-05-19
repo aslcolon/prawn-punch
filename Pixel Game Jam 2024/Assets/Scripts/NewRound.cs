@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewRound : MonoBehaviour
@@ -27,9 +27,9 @@ public class NewRound : MonoBehaviour
 
         
 
-        //nextRound();
+        nextRound();
 
-        //Invoke(nameof(currentRound), 2);
+        Invoke(nameof(currentRound), 2);
 
     }
 

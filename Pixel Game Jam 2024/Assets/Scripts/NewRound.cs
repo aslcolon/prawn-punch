@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class NewRou : MonoBehaviour
 {
+    AudioManager audioManager;
 
     public HealthBar refHealthP1, refHealthP2;
 
@@ -16,11 +17,14 @@ public class NewRou : MonoBehaviour
 
     private bool roundComplete = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
         refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
+
     }
 
     // Update is called once per frame
@@ -38,6 +42,11 @@ public class NewRou : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void nextRound()
     {
         if (roundComplete == false)
@@ -51,9 +60,17 @@ public class NewRou : MonoBehaviour
                 if (refHealthP1.oppPoint == numOfSeq * i || refHealthP2.oppPoint == numOfSeq * i)
                 {
                     roundPopup.GetComponent<SpriteRenderer>().sprite = round[i - 1];
+
+                    if (i == 1)
+                    {
+                        audioManager.PlaySFX(audioManager.bellSignal2);
+                    }
+                    else if (i == 2)
+                    {
+                        audioManager.PlaySFX(audioManager.bellSignal3);
+                    }
                 }
             }
-
             roundComplete = true;
         }
     }

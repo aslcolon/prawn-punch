@@ -45,12 +45,12 @@ public class KeySpawner : MonoBehaviour
             timer += Time.deltaTime;
         }
         // Else if sequence is not yet spawned, spawn key and reset timer
-        else if (refIsSpawn4.isSpawnP1 == false)
+        else if (refIsSpawn4.isSpawn == false)
         {
             spawnKeyP1();
             timer = 0;
         }
-        else if (refIsSpawn8.isSpawnP2 == false)
+        else if (refIsSpawn8.isSpawn == false)
         {
             spawnKeyP2();
             timer = 0;

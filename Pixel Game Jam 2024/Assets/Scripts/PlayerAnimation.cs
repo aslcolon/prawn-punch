@@ -22,24 +22,24 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
         if (gameObject.name == "P1")
         {
-            if (refIsSpawn4.isSpawnP1 == false)
+            if (refIsSpawn4.isSpawn == false)
             {
                 animator.SetBool("isPunchingP1", true);
             }
-            else if (refIsSpawn4.isSpawnP1 == true)
+            else if (refIsSpawn4.isSpawn == true)
             {
                 animator.SetBool("isPunchingP1", false);
             }
 
-            if (refIsSpawn8.isSpawnP2 == false)
+            if (refIsSpawn8.isSpawn == false)
             {
                 animator.SetBool("isHurtP1", true);
             }
-            else if (refIsSpawn8.isSpawnP2 == true)
+            else if (refIsSpawn8.isSpawn == true)
             {
                 animator.SetBool("isHurtP1", false);
             }
@@ -56,20 +56,20 @@ public class PlayerAnimation : MonoBehaviour
 
         if (gameObject.name == "P2")
         {
-            if (refIsSpawn8.isSpawnP2 == false)
+            if (refIsSpawn8.isSpawn == false)
             {
                 animator.SetBool("isPunchingP2", true);
             }
-            else if (refIsSpawn8.isSpawnP2 == true)
+            else if (refIsSpawn8.isSpawn == true)
             {
                 animator.SetBool("isPunchingP2", false);
             }
 
-            if (refIsSpawn4.isSpawnP1 == false)
+            if (refIsSpawn4.isSpawn == false)
             {
                 animator.SetBool("isHurtP2", true);
             }
-            else if (refIsSpawn4.isSpawnP1 == true)
+            else if (refIsSpawn4.isSpawn == true)
             {
                 animator.SetBool("isHurtP2", false);
             }

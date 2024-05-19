@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        else if (refIsSpawn4.isSpawnP1 == false && gameObject.name == "Health bar P2")
+        else if (refIsSpawn4.isSpawn == false && gameObject.name == "Health bar P2")
         {
             if (slider.value >= 4)
             {
@@ -41,7 +41,7 @@ public class HealthBar : MonoBehaviour
             }
             timer = 0;
         }
-        else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P1")
+        else if (refIsSpawn8.isSpawn == false && gameObject.name == "Health bar P1")
         {
             if (slider.value >= 4)
             {

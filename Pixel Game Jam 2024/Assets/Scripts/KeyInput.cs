@@ -145,7 +145,7 @@ public class KeyInput : MonoBehaviour
     void checkInputP1(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
         // If keyDir integer declared from KeyHolder script 
-        if (refScriptNum.keyDirP1 == 1)
+        if (refScriptNum.keyDir == 1)
         {
             if (Input.GetKeyDown(key1))
             {
@@ -162,7 +162,7 @@ public class KeyInput : MonoBehaviour
                 wrongInputP1 = true;
             }
         }
-        else if (refScriptNum.keyDirP1 == 2)
+        else if (refScriptNum.keyDir == 2)
         {
             if (Input.GetKeyDown(key2))
             {
@@ -179,7 +179,7 @@ public class KeyInput : MonoBehaviour
                 wrongInputP1 = true;
             }
         }
-        else if (refScriptNum.keyDirP1 == 3)
+        else if (refScriptNum.keyDir == 3)
         {
             if (Input.GetKeyDown(key3))
             {
@@ -196,7 +196,7 @@ public class KeyInput : MonoBehaviour
                 wrongInputP1 = true;
             }
         }
-        else if (refScriptNum.keyDirP1 == 4)
+        else if (refScriptNum.keyDir == 4)
         {
             if (Input.GetKeyDown(key4))
             {
@@ -218,7 +218,7 @@ public class KeyInput : MonoBehaviour
     // Check if key input matches key displayed for P2
     void checkInputP2(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
-        if (refScriptNum.keyDirP1 == 1)
+        if (refScriptNum.keyDir == 1)
         {
             if (Input.GetKeyDown(key1))
             {
@@ -235,7 +235,7 @@ public class KeyInput : MonoBehaviour
                 wrongInputP2 = true;
             }
         }
-        else if (refScriptNum.keyDirP1 == 2)
+        else if (refScriptNum.keyDir == 2)
         {
             if (Input.GetKeyDown(key2))
             {
@@ -252,7 +252,7 @@ public class KeyInput : MonoBehaviour
                 wrongInputP2 = true;
             }
         }
-        else if (refScriptNum.keyDirP1 == 3)
+        else if (refScriptNum.keyDir == 3)
         {
             if (Input.GetKeyDown(key3))
             {
@@ -269,7 +269,7 @@ public class KeyInput : MonoBehaviour
                 wrongInputP2 = true;
             }
         }
-        else if (refScriptNum.keyDirP1 == 4)
+        else if (refScriptNum.keyDir == 4)
         {
             if (Input.GetKeyDown(key4))
             {

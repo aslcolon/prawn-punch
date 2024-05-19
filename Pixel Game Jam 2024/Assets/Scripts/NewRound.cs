@@ -11,7 +11,7 @@ public class NewRou : MonoBehaviour
 
     public GameObject roundPopupPrefab;
 
-    public Sprite[] round = new Sprite[2];
+    public Sprite[] round = new Sprite[3];
 
     public int numOfSeq;
 
@@ -24,6 +24,9 @@ public class NewRou : MonoBehaviour
     {
         refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
         refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
+
+        nextRound();
+        Invoke(nameof(currentRound), 2);
 
     }
 
@@ -55,13 +58,17 @@ public class NewRou : MonoBehaviour
             refHealthP2.slider.value = 100;
             var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
             
-            for (int i = 1; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (refHealthP1.oppPoint == numOfSeq * i || refHealthP2.oppPoint == numOfSeq * i)
                 {
-                    roundPopup.GetComponent<SpriteRenderer>().sprite = round[i - 1];
+                    roundPopup.GetComponent<SpriteRenderer>().sprite = round[i];
 
-                    if (i == 1)
+                    if (i == 0)
+                    {
+                        audioManager.PlaySFX(audioManager.bellSignal1);
+                    }
+                    else if (i == 1)
                     {
                         audioManager.PlaySFX(audioManager.bellSignal2);
                     }

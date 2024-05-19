@@ -12,6 +12,8 @@ public class HealthBar : MonoBehaviour
 
     public KeyHolder refIsSpawn4, refIsSpawn8; // Declare KeyHolder to reference KeyHolder script
 
+    public int oppPoint = 0;
+
     // Implement decrease timer
     public double decRate = 0.1;
     private float timer = 0;
@@ -61,5 +63,6 @@ public class HealthBar : MonoBehaviour
                 Destroy(GameObject.Find("Prefab Spawn" + (i).ToString()));
             }
         }
+        oppPoint++;
     }
 }

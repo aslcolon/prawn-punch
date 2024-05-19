@@ -10,7 +10,7 @@ public class NewRou : MonoBehaviour
 
     public GameObject roundPopupPrefab;
 
-    public Sprite round2, round3;
+    public Sprite[] round = new Sprite[2];
 
     public int numOfSeq;
 
@@ -45,7 +45,15 @@ public class NewRou : MonoBehaviour
             refHealthP1.slider.value = 100;
             refHealthP2.slider.value = 100;
             var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
-            roundPopup.GetComponent<SpriteRenderer>().sprite = round3;
+            
+            for (int i = 1; i < 4; i++)
+            {
+                if (refHealthP1.oppPoint == numOfSeq * i || refHealthP2.oppPoint == numOfSeq * i)
+                {
+                    roundPopup.GetComponent<SpriteRenderer>().sprite = round[i - 1];
+                }
+            }
+
             roundComplete = true;
         }
     }

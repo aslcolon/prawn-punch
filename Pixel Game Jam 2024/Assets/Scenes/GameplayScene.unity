@@ -2032,6 +2032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1078353268}
+  decValue: 4
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
   decRate: 0.1
@@ -2889,6 +2890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1552319851}
+  decValue: 4
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
   decRate: 0.1

@@ -26,62 +26,42 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (gameObject.name == "P1")
         {
-            if (refIsSpawn4.isSpawn == false)
-            {
-                animator.SetBool("isPunchingP1", true);
-            }
-            else if (refIsSpawn4.isSpawn == true)
-            {
-                animator.SetBool("isPunchingP1", false);
-            }
-
-            if (refIsSpawn8.isSpawn == false)
-            {
-                animator.SetBool("isHurtP1", true);
-            }
-            else if (refIsSpawn8.isSpawn == true)
-            {
-                animator.SetBool("isHurtP1", false);
-            }
-
-            if (refHealthP1.slider.value == 0)
-            {
-                animator.SetBool("isKnockedOutP1", true);
-            }
-            else if (refHealthP1.slider.value == 100)
-            {
-                animator.SetBool("isKnockedOutP1", false);
-            }
+            aniConditions(refIsSpawn4, refIsSpawn8, refHealthP1, "isPunchingP1", "isHurtP1", "isKnockedOutP1");
         }
 
         if (gameObject.name == "P2")
         {
-            if (refIsSpawn8.isSpawn == false)
-            {
-                animator.SetBool("isPunchingP2", true);
-            }
-            else if (refIsSpawn8.isSpawn == true)
-            {
-                animator.SetBool("isPunchingP2", false);
-            }
+            aniConditions(refIsSpawn8, refIsSpawn4, refHealthP2, "isPunchingP2", "isHurtP2", "isKnockedOutP2");
+        }
+    }
 
-            if (refIsSpawn4.isSpawn == false)
-            {
-                animator.SetBool("isHurtP2", true);
-            }
-            else if (refIsSpawn4.isSpawn == true)
-            {
-                animator.SetBool("isHurtP2", false);
-            }
+    private void aniConditions(KeyHolder refIsSpawn1, KeyHolder refIsSpawn2, HealthBar refHealth, string isPunching, string isHurt, string isKnockedOut)
+    {
+        if (refIsSpawn1.isSpawn == false)
+        {
+            animator.SetBool(isPunching, true);
+        }
+        else if (refIsSpawn1.isSpawn == true)
+        {
+            animator.SetBool(isPunching, false);
+        }
 
-            if (refHealthP2.slider.value == 0)
-            {
-                animator.SetBool("isKnockedOutP2", true);
-            }
-            else if (refHealthP2.slider.value == 100)
-            {
-                animator.SetBool("isKnockedOutP2", false);
-            }
+        if (refIsSpawn2.isSpawn == false)
+        {
+            animator.SetBool(isHurt, true);
+        }
+        else if (refIsSpawn2.isSpawn == true)
+        {
+            animator.SetBool(isHurt, false);
+        }
+
+        if (refHealth.slider.value == 0)
+        {
+            animator.SetBool(isKnockedOut, true);
+        }
+        else if (refHealth.slider.value == 100)
+        {
+            animator.SetBool(isKnockedOut, false);
         }
     }
 

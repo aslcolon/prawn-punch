@@ -32,8 +32,8 @@ public class KeySpawner : MonoBehaviour
         spawnRate = 0.1; // Initialize spawnRate
 
         // Call spawnKey to spawn random keys on start
-        StartCoroutine(spawnKey("Spawn1", "Spawn2", "Spawn3", "Spawn4", countSeqP1, "Player 1"));
-        StartCoroutine(spawnKey("Spawn5", "Spawn6", "Spawn7", "Spawn8", countSeqP2, "Player 1");
+        spawnKey("Spawn1", "Spawn2", "Spawn3", "Spawn4", countSeqP1, "Player 1");
+        spawnKey("Spawn5", "Spawn6", "Spawn7", "Spawn8", countSeqP2, "Player 1");
     }
 
     // Update is called once per frame
@@ -57,8 +57,11 @@ public class KeySpawner : MonoBehaviour
         }
     }
 
-    IEnumerator spawnKey(string spaName1, string spaName2, string spaName3, string spaName4, int countSeq, string player)
+    private void spawnKey(string spaName1, string spaName2, string spaName3, string spaName4, int countSeq, string player)
     {
+
+        //yield return new WaitForSeconds(2);
+
         // For corresponding player spawn objects
         if (gameObject.name == spaName1 || gameObject.name == spaName2 || gameObject.name == spaName3 || gameObject.name == spaName4)
         {
@@ -78,7 +81,5 @@ public class KeySpawner : MonoBehaviour
             countSeq++; // Count sequence every time new sequence is spawned
             Debug.Log(player + ": " + newPrefab.name + " in sequence " + countSeq);
         }
-
-        yield return new WaitForSeconds(2);
     }
 }

@@ -27,14 +27,16 @@ public class LifeCounter : MonoBehaviour
         if (refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0)
         {
             GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled = false;
-            Invoke("nextRound", 3);
+            Invoke("nextRound", 2);
+            Invoke("currentRound", 4);
             //var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
             //SceneManager.LoadScene("GameplayScene");
         }
         else if (refHealthP2.slider.value == 0 && refHealthP1.slider.value > 0)
         {
             GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled = false;
-            Invoke("nextRound", 3);
+            Invoke("nextRound", 2);
+            Invoke("currentRound", 4);
             //var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
             //SceneManager.LoadScene("GameplayScene");
 
@@ -49,13 +51,15 @@ public class LifeCounter : MonoBehaviour
             refHealthP1.slider.value = 100;
             refHealthP2.slider.value = 100;
             var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
+            round2 = true;
         }
+    }
 
-        round2 = true;
-
+    private void currentRound()
+    {
         if (round2 == true)
         {
-            Destroy(GameObject.Find("roundPopup"));
+            Destroy(GameObject.Find("Round Popup(Clone)"));
         }
     }
 }

@@ -48,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour
             {
                 animator.SetBool("isKnockedOutP1", true);
             }
-            else if (refHealthP1.slider.value > 0)
+            else if (refHealthP1.slider.value == 100)
             {
                 animator.SetBool("isKnockedOutP1", false);
             }
@@ -78,7 +78,7 @@ public class PlayerAnimation : MonoBehaviour
             {
                 animator.SetBool("isKnockedOutP2", true);
             }
-            else if (refHealthP2.slider.value > 0)
+            else if (refHealthP2.slider.value == 100)
             {
                 animator.SetBool("isKnockedOutP2", false);
             }

@@ -8,6 +8,8 @@ public class KeySpawner : MonoBehaviour
 
     public KeyHolder refIsSpawn4, refIsSpawn8; // Declare KeyHolder to reference KeyHolder script
 
+    public LifeCounter refRound2;
+
     // Implement spawn timer
     public double spawnRate = 0.1;
     private float timer = 0;
@@ -25,6 +27,8 @@ public class KeySpawner : MonoBehaviour
         // Initialize refIsSpawn4 as KeyHolder components attached to each key holder
         refIsSpawn4 = GameObject.Find("Key4").GetComponent<KeyHolder>();
         refIsSpawn8 = GameObject.Find("Key8").GetComponent<KeyHolder>();
+
+        //refRound2 = GameObject.Find("UI").GetComponent<LifeCounter>();
 
         refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
         refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
@@ -104,56 +108,4 @@ public class KeySpawner : MonoBehaviour
             print(countSeqP2);
         }
     }
-
-    /*void roundPause(int countSeq)
-    {
-        if (countSeq == 5  && round1 == true)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
-            }
-            spawnRate = 5;
-            round1 = false;
-
-            
-        }
-        else if (round1 == false)
-        {
-
-            spawnRate = 0.1;
-        }
-
-        if (countSeq == 10 && round2 == true)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
-            }
-            spawnRate = 5;
-            round2 = false;
-
-
-        }
-        else if (round2 == false)
-        {
-            spawnRate = 0.1;
-        }
-
-        if (countSeq == 15 && round3 == true)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                Destroy(GameObject.Find("Prefab Spawn" + (i + 1).ToString()));
-            }
-            spawnRate = 5;
-            round3 = false;
-
-
-        }
-        else if (round3 == false)
-        {
-            spawnRate = 0.1;
-        }
-    }*/
 }

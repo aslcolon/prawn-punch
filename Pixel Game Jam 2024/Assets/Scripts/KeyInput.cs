@@ -9,6 +9,8 @@ public class KeyInput : MonoBehaviour
 
     AudioManager audioManager;
 
+    //public HealthBar refHealthP1, refHealthP2;
+
     // Declare KeyHolder to reference KeyHolder script integers
     public KeyHolder[] refScript = new KeyHolder[8];
 
@@ -33,6 +35,9 @@ public class KeyInput : MonoBehaviour
         {
             refScript[i] = GameObject.Find(holdName[i]).GetComponent<KeyHolder>();
         }
+
+        //refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
+        //refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame

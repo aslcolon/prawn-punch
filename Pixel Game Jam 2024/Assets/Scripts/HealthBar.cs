@@ -32,30 +32,30 @@ public class HealthBar : MonoBehaviour
             {
                 slider.value -= 50;
             }
+            else if (slider.value == 0)
+            {
+                for (int i = 5; i < 9; i++)
+                {
+                    Destroy(GameObject.Find("Prefab Spawn" + (i).ToString()));
+                }
+            }
             timer = 0;
         }
-        /*else if (refIsSpawn4.isSpawnP1 == true && slider.value == 0)
-        {
-            for (int i = 1; i < 9; i++)
-            {
-                GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }*/
         else if (refIsSpawn8.isSpawnP2 == false && gameObject.name == "Health bar P1")
         {
             if (slider.value >= 50)
             {
                 slider.value -= 50;
             }
+            else if (slider.value == 0)
+            {
+                for (int i = 1; i < 5; i++)
+                {
+                    Destroy(GameObject.Find("Prefab Spawn" + (i).ToString()));
+                }
+            }
             timer = 0;
         }
-        /*else if (refIsSpawn8.isSpawnP2 == true && slider.value == 0)
-        {
-            for (int i = 1; i < 9; i++)
-            {
-                GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }*/
 
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -35,9 +36,6 @@ public class KeyInput : MonoBehaviour
         {
             refScript[i] = GameObject.Find(holdName[i]).GetComponent<KeyHolder>();
         }
-
-        //refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
-        //refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -144,6 +142,7 @@ public class KeyInput : MonoBehaviour
     // Check if key input matches key displayed for P1
     void checkInputP1(KeyHolder refScriptNum, KeyCode key1, KeyCode key2, KeyCode key3, KeyCode key4)
     {
+        
         // If keyDir integer declared from KeyHolder script 
         if (refScriptNum.keyDir == 1)
         {

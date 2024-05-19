@@ -27,9 +27,9 @@ public class NewRound : MonoBehaviour
 
         
 
-        nextRound();
+        //nextRound();
 
-        Invoke(nameof(currentRound), 2);
+        //Invoke(nameof(currentRound), 2);
 
     }
 

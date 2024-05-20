@@ -14,8 +14,6 @@ public class HealthBar : MonoBehaviour
 
     public int oppPoint = 0;
 
-    public int pointCount;
-
     public int numOfSeq;
 
     // Implement decrease timer
@@ -41,23 +39,11 @@ public class HealthBar : MonoBehaviour
         {
             // Call function to control slider and reset timer
             slideConditions(5, 9);
-            
-            if (slider.value == 0)
-            {
-                addPoint("P1");
-            }
-
             timer = 0;
         }
         else if (refIsSpawn8.isSpawn == false && gameObject.name == "Health bar P1")
         {
             slideConditions(1, 5);
-
-            if (slider.value == 0)
-            {
-                addPoint("P2");
-            }
-
             timer = 0;
         }
 
@@ -81,24 +67,5 @@ public class HealthBar : MonoBehaviour
             }
         }
         oppPoint++;
-    }
-
-    private void addPoint(string opp)
-    {
-
-
-        for (int i = numOfSeq; i < (numOfSeq * 3) + 1; i++)
-        {
-            for (int j = 1; j < 4; j++)
-            {
-                if (oppPoint == numOfSeq * j)
-                {
-                    if (GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled == false)
-                    {
-                        GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled = true;
-                    }
-                }
-            }
-        }
     }
 }

@@ -16,6 +16,12 @@ public class PlayerWin : MonoBehaviour
 
     public Sprite P1Win, P2Win;
 
+    public int winner;
+
+    public int pointsP1, pointsP2;
+
+    private bool pointsCounted = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,27 +45,54 @@ public class PlayerWin : MonoBehaviour
             {
                 if (refRoundCounter.roundCounter == i)
                 {
-                    if (refHealthP2.oppPoint >= refHealthP1.oppPoint && refIsSpawn4.isSpawn == false)
+                    if (refIsSpawn4.isSpawn == false)
                     {
                         GameObject.Find("Star" + i + " P1").GetComponent<SpriteRenderer>().enabled = true;
                     }
-                    else if (refHealthP1.oppPoint >= refHealthP2.oppPoint && refIsSpawn8.isSpawn == false)
+                    else if (refIsSpawn8.isSpawn == false)
                     {
                         GameObject.Find("Star" + i + " P2").GetComponent<SpriteRenderer>().enabled = true;
                     }
                 }
             }
+
+            if (refRoundCounter.roundCounter == 3 && pointsCounted == false)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    if (GameObject.Find("Star" + i + " P1").GetComponent<SpriteRenderer>().enabled == true)
+                    {
+                        pointsP1++;
+                    }
+                    else if (GameObject.Find("Star" + i + " P2").GetComponent<SpriteRenderer>().enabled == true)
+                    {
+                        pointsP2++;
+                    }
+                }
+                pointsCounted = true;
+
+                if (pointsP1 > pointsP2)
+                {
+                    winner = 1;
+                }
+                else if (pointsP2 > pointsP1)
+                {
+                    winner = 2;
+                }
+            }
+
         }
 
-        if (GameObject.Find("UI").GetComponent<NewRound>().enabled == false && (GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled == true || GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled == true))
+
+        if (GameObject.Find("UI").GetComponent<NewRound>().enabled == false && (winner == 1 || winner == 2))
         {
             GameObject.Find("Win Menu").GetComponent<Image>().enabled = true;
 
-            if (GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled == true)
+            if (winner == 1)
             {
                 GameObject.Find("Win Menu").GetComponent<Image>().sprite = P1Win;
             }
-            else if (GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled == true)
+            else if (winner == 2)
             {
                 GameObject.Find("Win Menu").GetComponent<Image>().sprite = P2Win;
             }

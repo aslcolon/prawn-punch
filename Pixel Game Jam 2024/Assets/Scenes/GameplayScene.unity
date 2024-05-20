@@ -2162,7 +2162,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c706994b907e8541854a8e1721b2294, type: 3}
   - {fileID: 21300000, guid: d55fe39a02fdffc43bab7bcabe4a5716, type: 3}
   - {fileID: 21300000, guid: 02e3f6f534819624eab05b066d255a14, type: 3}
-  numOfSeq: 2
+  numOfSeq: 20
   roundCounter: 0
 --- !u!114 &940758180
 MonoBehaviour:
@@ -2183,6 +2183,9 @@ MonoBehaviour:
   refIsSpawn8: {fileID: 0}
   P1Win: {fileID: 21300000, guid: ccf2086d7e9e64940b5f7a16c1027988, type: 3}
   P2Win: {fileID: 21300000, guid: cee3cf216a4402644a231961bb14b89c, type: 3}
+  winner: 0
+  pointsP1: 0
+  pointsP2: 0
 --- !u!1 &1078353266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,11 +2290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1078353268}
-  decValue: 50
+  decValue: 5
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
   oppPoint: 0
-  pointCount: 0
   numOfSeq: 0
   decRate: 0.1
 --- !u!1 &1151447058
@@ -3196,11 +3198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1552319851}
-  decValue: 50
+  decValue: 5
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
   oppPoint: 0
-  pointCount: 0
   numOfSeq: 0
   decRate: 0.1
 --- !u!1001 &1570074683

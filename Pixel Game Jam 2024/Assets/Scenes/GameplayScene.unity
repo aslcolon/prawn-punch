@@ -1935,7 +1935,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ca7cff4b72810a643bf11df2ec6ff5a1, type: 3}
   - {fileID: 21300000, guid: 59075942d32e7ad4fbde84fd991dc476, type: 3}
   - {fileID: 21300000, guid: 8a2f1b90a9da1eb40919d8b7b9eefed4, type: 3}
-  numOfSeq: 25
+  roDisplay:
+  - {fileID: 21300000, guid: 7c706994b907e8541854a8e1721b2294, type: 3}
+  - {fileID: 21300000, guid: d55fe39a02fdffc43bab7bcabe4a5716, type: 3}
+  - {fileID: 21300000, guid: 02e3f6f534819624eab05b066d255a14, type: 3}
+  numOfSeq: 2
+  roundCounter: 0
 --- !u!1 &1078353266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,10 +2045,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1078353268}
-  decValue: 4
+  decValue: 50
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
   oppPoint: 0
+  pointCount: 0
+  numOfSeq: 0
   decRate: 0.1
 --- !u!1 &1151447058
 GameObject:
@@ -2899,10 +2906,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1552319851}
-  decValue: 4
+  decValue: 50
   refIsSpawn4: {fileID: 0}
   refIsSpawn8: {fileID: 0}
   oppPoint: 0
+  pointCount: 0
+  numOfSeq: 0
   decRate: 0.1
 --- !u!1001 &1570074683
 PrefabInstance:

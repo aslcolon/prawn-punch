@@ -14,6 +14,8 @@ public class HealthBar : MonoBehaviour
 
     public int oppPoint = 0;
 
+    public int pointCount;
+
     public int numOfSeq;
 
     // Implement decrease timer
@@ -58,6 +60,7 @@ public class HealthBar : MonoBehaviour
 
             timer = 0;
         }
+
     }
 
     // Slider conditions to decrease slider and when slider is  zero
@@ -91,6 +94,7 @@ public class HealthBar : MonoBehaviour
                     if (GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled == false)
                     {
                         GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled = true;
+                        pointCount++;
                     }
                 }
             }

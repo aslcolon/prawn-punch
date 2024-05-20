@@ -20,6 +20,9 @@ public class NewRound : MonoBehaviour
     private bool roundComplete = false;
 
 
+    public int roundCounter = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +31,12 @@ public class NewRound : MonoBehaviour
 
         nextRound();
         Invoke(nameof(currentRound), 2);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (((refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0) || (refHealthP2.slider.value == 0 && refHealthP1.slider.value > 0)) && (refHealthP1.oppPoint <= numOfSeq * 2 || refHealthP2.oppPoint <= numOfSeq * 2))
+        if ((refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0) || (refHealthP2.slider.value == 0 && refHealthP1.slider.value > 0))
         {
             roundComplete = false;
 
@@ -66,13 +68,16 @@ public class NewRound : MonoBehaviour
     {
         if (roundComplete == false)
         {
+            roundCounter++;
             refHealthP1.slider.value = 100;
             refHealthP2.slider.value = 100;
             var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
             
+
             for (int i = 0; i < 3; i++)
             {
-                if (refHealthP1.oppPoint == numOfSeq * i || refHealthP2.oppPoint == numOfSeq * i)
+
+                if (roundCounter == i + 1)
                 {
                     roundPopup.GetComponent<SpriteRenderer>().sprite = round[i];
                     GameObject.Find("Round").GetComponent<SpriteRenderer>().sprite = roDisplay[i];
@@ -90,9 +95,12 @@ public class NewRound : MonoBehaviour
                         audioManager.PlaySFX(audioManager.bellSignal3);
                     }
                 }
+
+                //if (refHealthP1.oppPoint == numOfSeq * i || refHealthP2.oppPoint == numOfSeq * i)
             }
             roundComplete = true;
         }
+
     }
 
     private void currentRound()

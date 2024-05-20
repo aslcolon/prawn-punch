@@ -1890,6 +1890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940758178}
   - component: {fileID: 940758179}
+  - component: {fileID: 940758180}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1941,6 +1942,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 02e3f6f534819624eab05b066d255a14, type: 3}
   numOfSeq: 2
   roundCounter: 0
+--- !u!114 &940758180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940758177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185e2999e92a835478583f8cb4350a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refHealthP1: {fileID: 0}
+  refHealthP2: {fileID: 0}
 --- !u!1 &1078353266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2556,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ccf2086d7e9e64940b5f7a16c1027988, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

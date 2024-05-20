@@ -53,7 +53,7 @@ public class NewRound : MonoBehaviour
             Invoke(nameof(currentRound), 4);
         }
 
-        if (refHealthP1.oppPoint > numOfSeq * 2 || refHealthP2.oppPoint > numOfSeq * 2)
+        if (roundCounter == 3)
         {
             GameObject.Find("UI").GetComponent<NewRound>().enabled = false;
         }

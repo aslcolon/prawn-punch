@@ -85,6 +85,8 @@ public class HealthBar : MonoBehaviour
 
     private void addPoint(string opp)
     {
+
+
         for (int i = numOfSeq; i < (numOfSeq * 3) + 1; i++)
         {
             for (int j = 1; j < 4; j++)
@@ -94,7 +96,6 @@ public class HealthBar : MonoBehaviour
                     if (GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled == false)
                     {
                         GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled = true;
-                        pointCount++;
                     }
                 }
             }

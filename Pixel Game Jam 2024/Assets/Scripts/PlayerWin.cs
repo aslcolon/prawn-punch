@@ -11,6 +11,8 @@ public class PlayerWin : MonoBehaviour
 
     public KeyHolder refIsSpawn4, refIsSpawn8;
 
+    public Sprite P1Win, P2Win;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,18 @@ public class PlayerWin : MonoBehaviour
         if (GameObject.Find("UI").GetComponent<NewRound>().enabled == false && (GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled == true || GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled == true))
         {
             GameObject.Find("Player Wins").GetComponent<SpriteRenderer>().enabled = true;
+
+            if (GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled == true)
+            {
+                GameObject.Find("Player Wins").GetComponent<SpriteRenderer>().sprite = P1Win;
+            }
+            else if (GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled == true)
+            {
+                GameObject.Find("Player Wins").GetComponent<SpriteRenderer>().sprite = P2Win;
+            }
+
+            GameObject.Find("Play Again").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Exit Game").GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }

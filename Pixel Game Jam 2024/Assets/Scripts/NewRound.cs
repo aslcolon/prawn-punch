@@ -13,10 +13,11 @@ public class NewRound : MonoBehaviour
 
     public Sprite[] round = new Sprite[3];
 
+    public Sprite[] roDisplay = new Sprite[3];
+
     public int numOfSeq;
 
     private bool roundComplete = false;
-
 
 
     // Start is called before the first frame update
@@ -25,10 +26,7 @@ public class NewRound : MonoBehaviour
         refHealthP1 = GameObject.Find("Health bar P1").GetComponent<HealthBar>();
         refHealthP2 = GameObject.Find("Health bar P2").GetComponent<HealthBar>();
 
-        
-
         nextRound();
-
         Invoke(nameof(currentRound), 2);
 
     }
@@ -36,15 +34,26 @@ public class NewRound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0) || (refHealthP2.slider.value == 0 && refHealthP1.slider.value > 0))
+        if (((refHealthP1.slider.value == 0 && refHealthP2.slider.value > 0) || (refHealthP2.slider.value == 0 && refHealthP1.slider.value > 0)) && (refHealthP1.oppPoint <= numOfSeq * 2 || refHealthP2.oppPoint <= numOfSeq * 2))
         {
             roundComplete = false;
 
-            addPoint(refHealthP1, "P2");
-            addPoint(refHealthP2, "P1");
+            for (int j = 1; j < 9; j++)
+            {
+                GameObject.Find("Prefab Spawn" + (j).ToString()).GetComponent<SpriteRenderer>().enabled = false;
+            }
+            for (int i = 1; i < 9; i++)
+            {
+                GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<KeyInput>().enabled = false;
+            }
 
             Invoke(nameof(nextRound), 2);
             Invoke(nameof(currentRound), 4);
+        }
+
+        if (refHealthP1.oppPoint > numOfSeq * 2 || refHealthP2.oppPoint > numOfSeq * 2)
+        {
+            GameObject.Find("UI").GetComponent<NewRound>().enabled = false;
         }
     }
 
@@ -61,11 +70,12 @@ public class NewRound : MonoBehaviour
             refHealthP2.slider.value = 100;
             var roundPopup = Instantiate(roundPopupPrefab, transform.position, transform.rotation);
             
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 if (refHealthP1.oppPoint == numOfSeq * i || refHealthP2.oppPoint == numOfSeq * i)
                 {
                     roundPopup.GetComponent<SpriteRenderer>().sprite = round[i];
+                    GameObject.Find("Round").GetComponent<SpriteRenderer>().sprite = roDisplay[i];
 
                     if (i == 0)
                     {
@@ -97,23 +107,6 @@ public class NewRound : MonoBehaviour
             for (int i = 1; i < 9; i++)
             {
                 GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<KeyInput>().enabled = true;
-            }
-        }
-    }
-
-    private void addPoint(HealthBar refHealth, string opp)
-    {
-        for (int i = numOfSeq; i < (numOfSeq * 3) + 1; i++)
-        {
-            for (int j = 1; j < 4; j++)
-            {
-                if (refHealth.slider.value == 0 && refHealth.oppPoint == numOfSeq * j)
-                {
-                    if (GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled == false)
-                    {
-                        GameObject.Find("Star" + j + " " + opp).GetComponent<SpriteRenderer>().enabled = true;
-                    }
-                }
             }
         }
     }

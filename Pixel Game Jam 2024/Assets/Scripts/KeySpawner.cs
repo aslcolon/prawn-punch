@@ -78,6 +78,7 @@ public class KeySpawner : MonoBehaviour
                     GameObject.Find("Prefab Spawn" + (i).ToString()).GetComponent<SpriteRenderer>().enabled = false;
                 }
             }
+ 
             countSeq++; // Count sequence every time new sequence is spawned
             Debug.Log(player + ": " + newPrefab.name + " in sequence " + countSeq);
         }

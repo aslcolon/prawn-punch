@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip cursorHover;
     public AudioClip cursorSelect;
     public AudioClip bubblePop;
+    public AudioClip fail;
 
     private void Start()
     {

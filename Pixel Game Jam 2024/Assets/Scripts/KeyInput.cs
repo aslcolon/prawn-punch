@@ -23,7 +23,7 @@ public class KeyInput : MonoBehaviour
 
     // Declare bool for P1 and P2 for checking inputs
     // isHit checks if input is correct while wrongInput checks if input is incorrect
-    private bool isHitP1, isHitP2, wrongInputP1, wrongInputP2;
+    private bool isHitP1 = false, isHitP2 = false, wrongInputP1 = false, wrongInputP2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +36,6 @@ public class KeyInput : MonoBehaviour
         {
             refScript[i] = GameObject.Find(holdName[i]).GetComponent<KeyHolder>();
         }
-
-        isHitP1 = false;
-        isHitP2 = false;
-        wrongInputP1 = false;
-        wrongInputP2 = false;
     }
 
     // Update is called once per frame

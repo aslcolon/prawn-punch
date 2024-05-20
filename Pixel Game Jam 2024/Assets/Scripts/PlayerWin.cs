@@ -20,7 +20,7 @@ public class PlayerWin : MonoBehaviour
 
     public int pointsP1, pointsP2;
 
-    private bool pointsCounted = false;
+    private bool pointsCounted3 = false;
 
 
     // Start is called before the first frame update
@@ -45,6 +45,9 @@ public class PlayerWin : MonoBehaviour
             {
                 if (refRoundCounter.roundCounter == i)
                 {
+
+                   
+
                     if (refIsSpawn4.isSpawn == false)
                     {
                         GameObject.Find("Star" + i + " P1").GetComponent<SpriteRenderer>().enabled = true;
@@ -56,7 +59,20 @@ public class PlayerWin : MonoBehaviour
                 }
             }
 
-            if (refRoundCounter.roundCounter == 3 && pointsCounted == false)
+            /*if (refRoundCounter.roundCounter == 1 && pointsCounted1 == false)
+            {
+                if (pointsP1 == 1)
+                {
+                    GameObject.Find("Star1 P1").GetComponent<SpriteRenderer>().enabled = true;
+                }
+                else if (pointsP2 == 1)
+                {
+                    GameObject.Find("Star1 P2").GetComponent<SpriteRenderer>().enabled = true;
+                }
+                pointsCounted1 = true;
+            }*/
+
+            if (refRoundCounter.roundCounter == 3 && pointsCounted3 == false)
             {
                 for (int i = 1; i < 4; i++)
                 {
@@ -69,7 +85,7 @@ public class PlayerWin : MonoBehaviour
                         pointsP2++;
                     }
                 }
-                pointsCounted = true;
+                pointsCounted3 = true;
 
                 if (pointsP1 > pointsP2)
                 {
@@ -98,7 +114,6 @@ public class PlayerWin : MonoBehaviour
             }
 
             GameObject.Find("Play Again").GetComponent<Image>().enabled = true;
-            GameObject.Find("Exit Game").GetComponent<Image>().enabled = true;
         }
     }
 }

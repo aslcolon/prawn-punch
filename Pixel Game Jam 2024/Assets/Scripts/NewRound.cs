@@ -106,6 +106,7 @@ public class NewRound : MonoBehaviour
     {
         if (roundComplete == true)
         {
+            Debug.Log("STILL A NEW ROUND");
             Destroy(GameObject.Find("Round Popup(Clone)"));
             for (int j = 1; j < 9; j++)
             {

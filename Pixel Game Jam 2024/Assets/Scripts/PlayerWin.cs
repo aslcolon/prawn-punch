@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerWin : MonoBehaviour
 {
@@ -48,23 +51,21 @@ public class PlayerWin : MonoBehaviour
             }
         }
 
-
-
         if (GameObject.Find("UI").GetComponent<NewRound>().enabled == false && (GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled == true || GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled == true))
         {
-            GameObject.Find("Player Wins").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Win Menu").GetComponent<Image>().enabled = true;
 
             if (GameObject.Find("Star3 P1").GetComponent<SpriteRenderer>().enabled == true)
             {
-                GameObject.Find("Player Wins").GetComponent<SpriteRenderer>().sprite = P1Win;
+                GameObject.Find("Win Menu").GetComponent<Image>().sprite = P1Win;
             }
             else if (GameObject.Find("Star3 P2").GetComponent<SpriteRenderer>().enabled == true)
             {
-                GameObject.Find("Player Wins").GetComponent<SpriteRenderer>().sprite = P2Win;
+                GameObject.Find("Win Menu").GetComponent<Image>().sprite = P2Win;
             }
 
-            GameObject.Find("Play Again").GetComponent<SpriteRenderer>().enabled = true;
-            GameObject.Find("Exit Game").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Play Again").GetComponent<Image>().enabled = true;
+            GameObject.Find("Exit Game").GetComponent<Image>().enabled = true;
         }
     }
 }

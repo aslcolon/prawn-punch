@@ -164,6 +164,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP1 = 0;
                 print(holdCountP1);
                 wrongInputP1 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
         else if (refScriptNum.keyDir == 2)
@@ -181,6 +182,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP1 = 0;
                 print(holdCountP1);
                 wrongInputP1 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
         else if (refScriptNum.keyDir == 3)
@@ -198,6 +200,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP1 = 0;
                 print(holdCountP1);
                 wrongInputP1 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
         else if (refScriptNum.keyDir == 4)
@@ -215,6 +218,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP1 = 0;
                 print(holdCountP1);
                 wrongInputP1 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
     }
@@ -237,6 +241,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP2 = holdName.Length / 2;
                 print(holdCountP2);
                 wrongInputP2 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
         else if (refScriptNum.keyDir == 2)
@@ -254,6 +259,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP2 = holdName.Length / 2;
                 print(holdCountP2);
                 wrongInputP2 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
         else if (refScriptNum.keyDir == 3)
@@ -271,6 +277,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP2 = holdName.Length / 2;
                 print(holdCountP2);
                 wrongInputP2 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
         else if (refScriptNum.keyDir == 4)
@@ -288,6 +295,7 @@ public class KeyInput : MonoBehaviour
                 holdCountP2 = holdName.Length / 2;
                 print(holdCountP2);
                 wrongInputP2 = true;
+                audioManager.PlaySFX(audioManager.fail);
             }
         }
     }

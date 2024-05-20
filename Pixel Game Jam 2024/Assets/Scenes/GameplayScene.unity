@@ -2029,6 +2029,7 @@ MonoBehaviour:
   cursorHover: {fileID: 8300000, guid: 21713ebb256b4ff4589c8ece475186fd, type: 3}
   cursorSelect: {fileID: 8300000, guid: d702306cdabff854d9c7ab0a04af3a77, type: 3}
   bubblePop: {fileID: 8300000, guid: b695623e1dcfada4e801bc4f7e98d8df, type: 3}
+  fail: {fileID: 8300000, guid: ba0004a5bb3b5a44286c40778b78845e, type: 3}
 --- !u!4 &843674561
 Transform:
   m_ObjectHideFlags: 0

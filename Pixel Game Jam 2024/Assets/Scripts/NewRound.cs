@@ -79,7 +79,6 @@ public class NewRound : MonoBehaviour
 
                 if (roundCounter == i + 1)
                 {
-                    roundPopup.GetComponent<SpriteRenderer>().sprite = round[i];
                     GameObject.Find("Round").GetComponent<SpriteRenderer>().sprite = roDisplay[i];
 
                     if (i == 0)

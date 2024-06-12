@@ -47,7 +47,7 @@ public class KeyInput : MonoBehaviour
             if (holdCountP1 == i)
             {
                 // Check input for corresponding key holder to the referenced key displayed 
-                checkInputP1(refScript[i], KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
+                checkInputP1(refScript[i], KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow);
 
                 // If input is correct
                 if (isHitP1 == true)
